@@ -67,7 +67,7 @@ export const AiAutomationSection: React.FC = () => {
   ];
 
   return (
-    <section id="services-ai" className="py-24 relative overflow-hidden bg-[#080B14]">
+    <section id="services-ai" className="pt-16 sm:pt-20 pb-6 sm:pb-8 relative overflow-hidden bg-[#080B14]">
       {/* Background radial glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gradient-to-tr from-[#647BFF]/15 to-[#40D9E8]/10 rounded-full blur-[140px] pointer-events-none"></div>
 

@@ -589,14 +589,14 @@ export const CreativeDesignSection: React.FC = () => {
   }, [selectedWork, allWorks]);
 
   return (
-    <section id="services-creative" className="py-28 relative overflow-hidden bg-[#080B14]">
+    <section id="services-creative" className="pt-2 sm:pt-4 pb-20 sm:pb-24 relative overflow-hidden bg-[#080B14]">
       {/* Ambient background glows */}
       <div className="absolute top-1/4 -right-40 w-96 h-96 bg-purple-600/10 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute top-2/3 -left-40 w-96 h-96 bg-cyan-500/10 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 max-w-7xl">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-20">
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-14">
           <div className="section-tag justify-center">
             <PaletteIcon size={16} />
             <span>{t('services.creative.tag')}</span>
