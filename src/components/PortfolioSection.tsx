@@ -11,82 +11,82 @@ interface PortfolioItem {
   descEn: string;
   tag: string;
   metrics: string;
-  gradient: string;
-  icon: string;
+  image: string;
+  accent: string;
 }
 
 const portfolioData: PortfolioItem[] = [
   {
     id: 'p1',
     category: 'web',
-    titleAr: 'منصة بيع وتأجير العقارات الفاخرة',
-    titleEn: 'Luxury Real Estate Architectural Portal',
-    descAr: 'تطبيق ويب تفاعلي مع جولات 3D وفلاتر موقع ذكية.',
-    descEn: 'Interactive web platform with 3D tours & smart location filters.',
-    tag: 'Web & Mobile',
-    metrics: '+2.4M زائر سنوياً',
-    gradient: 'from-[#121a2c] via-[#1a2948] to-[#213a69]',
-    icon: '🏰'
+    titleAr: 'Maison Savour — مطعم فاخر وتجربة ضيافة ملكية',
+    titleEn: 'Maison Savour — Luxury Gastronomy & Dining',
+    descAr: 'تصميم داكن أنيق يبرز الأطباق بجودة سينمائية مع نظام حجز طاولات تفاعلي.',
+    descEn: 'Cinematic dark UI showcasing culinary art with interactive table bookings.',
+    tag: 'Hospitality & Web',
+    metrics: '+210% نمو الحجوزات',
+    image: '/showcase/maison-savour.jpg',
+    accent: '#F97316'
   },
   {
     id: 'p2',
-    category: 'ai',
-    titleAr: 'روبوت محادثة وحجز ذكي للمطاعم',
-    titleEn: 'Autonomous WhatsApp Dining Concierge',
-    descAr: 'رد آلي على 100% من الاستفسارات مع حجز طاولات فوري.',
-    descEn: 'Instant automated replies and table reservations.',
-    tag: 'AI Automation',
-    metrics: '99.4% دقة الردود',
-    gradient: 'from-[#0b2126] via-[#103741] to-[#144f5e]',
-    icon: '🤖'
+    category: 'web',
+    titleAr: 'Astra Dent — مركز طب وتجميل الأسنان المتقدم',
+    titleEn: 'Astra Dent — Advanced Dental Healthcare',
+    descAr: 'واجهة صحية ناصعة مع حجز مواعيد فوري في 30 ثانية وتأكيد واتساب آلي.',
+    descEn: 'Pristine medical clinic interface with 30s appointment scheduling.',
+    tag: 'Healthcare Web',
+    metrics: '99.8% التزام بالمواعيد',
+    image: '/showcase/astra-dent.jpg',
+    accent: '#38BDF8'
   },
   {
     id: 'p3',
-    category: 'systems',
-    titleAr: 'نظام إدارة سلاسل الإمداد والمخازن',
-    titleEn: 'Cloud Supply Chain & Warehouse ERP',
-    descAr: 'لوحة تحكم فورية لمتابعة 50,000 منتج بدقة متناهية.',
-    descEn: 'Real-time telemetry tracking 50,000 inventory items.',
-    tag: 'Enterprise SaaS',
-    metrics: 'توفير 40 ساعة أسبوعياً',
-    gradient: 'from-[#1a1226] via-[#291b40] to-[#3e2563]',
-    icon: '📊'
+    category: 'web',
+    titleAr: 'AHEAD — وكالة رحلات واستكشافات سياحية فاخرة',
+    titleEn: 'AHEAD — Curated Luxury Travel & Expeditions',
+    descAr: 'تصميم غامر مستوحى من نافذة الطائرة لاستعراض الوجهات العالمية والباقات.',
+    descEn: 'Immersive travel interface presenting global destinations and custom tours.',
+    tag: 'Travel & Tourism',
+    metrics: '+320% نمو المبيعات',
+    image: '/showcase/ahead-travel.jpg',
+    accent: '#FB923C'
   },
   {
     id: 'p4',
-    category: 'branding',
-    titleAr: 'هوية بصرية كاملة لشركة عطور عالمية',
-    titleEn: 'Global Fragrance Haute Identity',
-    descAr: 'شعار أيقوني، عبوات ذهبية، وتصوير إعلاني ثلاثي الأبعاد.',
-    descEn: 'Iconic logo, gold-foiled packaging and 3D renders.',
-    tag: 'Visual Identity',
-    metrics: 'جائزة أفضل تصميم 2026',
-    gradient: 'from-[#22170d] via-[#382413] to-[#543417]',
-    icon: '👑'
+    category: 'web',
+    titleAr: 'Livora Interiors — أثاث راقي وتصميم داخلي معماري',
+    titleEn: 'Livora Interiors — Haute Architecture & Furniture',
+    descAr: 'استعراض معماري أنيق للأثاث الفاخر والغرف وتنسيقات المنازل مع متجر متكامل.',
+    descEn: 'Architectural furniture catalog with customized purchasing workflow.',
+    tag: 'Architecture & E-Com',
+    metrics: 'مبيعات +1.8M$ في أول ربع',
+    image: '/showcase/livora-interiors.jpg',
+    accent: '#A3E635'
   },
   {
     id: 'p5',
     category: 'web',
-    titleAr: 'بوابة الرعاية الطبية وحجز العيادات',
-    titleEn: 'Apex Healthcare Telemedicine Portal',
-    descAr: 'حجز مواعيد متزامن مع ملف صحي سحابي متوافق مع HIPAA.',
-    descEn: 'Frictionless medical booking with patient dashboard.',
-    tag: 'Healthcare Web',
-    metrics: '+350% نمو الحجوزات',
-    gradient: 'from-[#0a1e2f] via-[#0d2f4d] to-[#0f446f]',
-    icon: '🩺'
+    titleAr: 'Royal Crest — فندق ومنتجع 5 نجوم ملكي',
+    titleEn: 'Royal Crest — 5-Star Hotel & Presidential Suites',
+    descAr: 'أجواء ذهبية وفخامة داكنة لاستعراض الأجنحة، المرافق والسبا، مع محرك حجز فوري.',
+    descEn: 'Regal obsidian and gold aesthetic showcasing presidential suites and direct booking.',
+    tag: 'Resort & Booking',
+    metrics: '98% نسبة إشغال الغرف',
+    image: '/showcase/royal-crest.jpg',
+    accent: '#EAB308'
   },
   {
     id: 'p6',
-    category: 'ai',
-    titleAr: 'محرك توليد وتأهيل عملاء العقارات',
-    titleEn: 'Real Estate Smart Lead Engine',
-    descAr: 'فلترة المشتري الجاد وربطه مباشرة مع المستشار العقاري.',
-    descEn: 'Instant lead qualification with CRM sync.',
-    tag: 'AI Workflows',
-    metrics: 'رفع المبيعات +180%',
-    gradient: 'from-[#081e1a] via-[#0e332c] to-[#124d43]',
-    icon: '⚡'
+    category: 'web',
+    titleAr: 'CAKÉ — متجر حلويات وكيك فاخر حسب الطلب',
+    titleEn: 'CAKÉ — Haute Confectionery & Gourmet E-Commerce',
+    descAr: 'كتالوج تفاعلي 360° لاختيار كيك المناسبات حسب المزاج وتجربة دفع سلسة.',
+    descEn: '360° custom cake builder with effortless instant mobile checkout.',
+    tag: 'Luxury E-Commerce',
+    metrics: '+180% تحويل السلة',
+    image: '/showcase/cake-bakery.jpg',
+    accent: '#EC4899'
   }
 ];
 
@@ -115,55 +115,36 @@ export const PortfolioSection: React.FC = () => {
           </p>
         </div>
 
-        {/* Filter Pills */}
-        <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-12">
-          {[
-            { id: 'all', label: t('portfolio.filter.all') },
-            { id: 'web', label: t('portfolio.filter.web') },
-            { id: 'ai', label: t('portfolio.filter.ai') },
-            { id: 'systems', label: t('portfolio.filter.systems') },
-            { id: 'branding', label: t('portfolio.filter.branding') },
-          ].map((flt) => (
-            <button
-              key={flt.id}
-              onClick={() => setActiveFilter(flt.id as any)}
-              className={`px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
-                activeFilter === flt.id
-                  ? 'bg-gradient-to-r from-[#647BFF] to-[#40D9E8] text-white shadow-[0_0_20px_rgba(100,123,255,0.4)]'
-                  : 'bg-white/[0.04] text-[#A5B0C2] hover:bg-white/[0.08] hover:text-white border border-white/5'
-              }`}
-            >
-              {flt.label}
-            </button>
-          ))}
-        </div>
-
         {/* Gallery Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {filteredItems.map((item) => (
             <div
               key={item.id}
-              className="rounded-3xl p-6 bg-gradient-to-b from-white/[0.06] to-white/[0.02] backdrop-blur-xl border border-white/10 hover:border-[#40D9E8]/40 transition-all duration-500 group shadow-[0_20px_45px_rgba(0,0,0,0.5)] flex flex-col justify-between"
+              className="rounded-3xl p-5 bg-[#101827]/90 backdrop-blur-xl border border-white/10 hover:border-[#40D9E8]/40 transition-all duration-500 group shadow-[0_20px_45px_rgba(0,0,0,0.6)] flex flex-col justify-between"
             >
               <div>
-                {/* Visual Card Header */}
-                <div className={`h-48 rounded-2xl p-5 bg-gradient-to-tr ${item.gradient} border border-white/10 flex flex-col justify-between relative overflow-hidden group-hover:scale-[1.02] transition-transform duration-500`}>
-                  <div className="flex items-center justify-between">
-                    <span className="w-10 h-10 rounded-xl bg-black/40 border border-white/10 flex items-center justify-center text-xl shadow-inner">
-                      {item.icon}
-                    </span>
-                    <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold text-white bg-black/40 border border-white/10">
+                {/* Visual Card Image Preview */}
+                <div className="h-56 rounded-2xl border border-white/10 overflow-hidden relative group-hover:scale-[1.02] transition-transform duration-500 shadow-md">
+                  <img
+                    src={item.image}
+                    alt={item.titleAr}
+                    className="w-full h-full object-cover object-top"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+
+                  <div className="absolute top-3 right-3 left-3 flex items-center justify-between">
+                    <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold text-white bg-black/60 border border-white/10 backdrop-blur-md">
                       {item.tag}
                     </span>
-                  </div>
-
-                  <div className="py-1 px-2.5 rounded-lg bg-black/40 border border-white/10 text-[11px] font-mono text-[#40D9E8] self-start">
-                    ⚡ {item.metrics}
+                    <span className="py-0.5 px-2.5 rounded-full bg-black/60 border border-white/10 text-[10px] font-mono text-[#40D9E8] backdrop-blur-md">
+                      ⚡ {item.metrics}
+                    </span>
                   </div>
                 </div>
 
                 {/* Details */}
-                <h3 className="text-base sm:text-lg font-bold text-white mt-5 mb-2 group-hover:text-[#40D9E8] transition-colors">
+                <h3 className="text-base sm:text-lg font-bold text-white mt-4 mb-1.5 group-hover:text-[#40D9E8] transition-colors truncate">
                   {lang === 'ar' ? item.titleAr : item.titleEn}
                 </h3>
                 <p className="text-xs sm:text-sm text-[#A5B0C2] leading-relaxed line-clamp-2">
@@ -172,13 +153,13 @@ export const PortfolioSection: React.FC = () => {
               </div>
 
               {/* Action Link */}
-              <div className="pt-4 mt-6 border-t border-white/10 flex items-center justify-between">
+              <div className="pt-4 mt-5 border-t border-white/10 flex items-center justify-between">
                 <span className="text-[11px] text-[#A5B0C2]">Enoove Signature Case</span>
                 <a
                   href="#contact"
                   className="inline-flex items-center gap-1 text-xs font-bold text-[#40D9E8] hover:underline"
                 >
-                  <span>استكشف المشروع</span>
+                  <span>اطلب مشروع مماثل</span>
                   <ArrowUpRightIcon size={14} />
                 </a>
               </div>

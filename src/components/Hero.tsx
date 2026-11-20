@@ -68,13 +68,13 @@ export const Hero: React.FC = () => {
           </div>
         </div>
 
-        {/* Hero Visual Showcase: Isolated, clean central showcase */}
-        <div className="relative w-full max-w-4xl min-h-[340px] sm:min-h-[380px] flex items-center justify-center mt-2">
+        {/* Hero Visual Showcase with Real Screen Mockup */}
+        <div className="relative w-full max-w-4xl min-h-[380px] sm:min-h-[440px] flex items-center justify-center mt-2">
           
           {/* Main Central Glass Mockup Card */}
-          <div className="relative z-20 w-full max-w-3xl rounded-3xl p-5 sm:p-7 bg-[#101827]/90 backdrop-blur-2xl border border-white/20 shadow-[0_30px_80px_rgba(0,0,0,0.7)] flex flex-col justify-between overflow-hidden">
+          <div className="relative z-20 w-full max-w-3xl rounded-3xl p-5 sm:p-7 bg-[#101827]/95 backdrop-blur-2xl border border-white/20 shadow-[0_30px_90px_rgba(0,0,0,0.85)] flex flex-col justify-between overflow-hidden">
             
-            {/* Top Mockup Browser Header */}
+            {/* Top Browser Header */}
             <div className="flex items-center justify-between pb-3.5 border-b border-white/10 mb-4">
               <div className="flex items-center gap-2">
                 <span className="w-3 h-3 rounded-full bg-[#FF5F56]/90"></span>
@@ -82,51 +82,46 @@ export const Hero: React.FC = () => {
                 <span className="w-3 h-3 rounded-full bg-[#27C93F]/90"></span>
               </div>
               <div className="px-4 py-1 rounded-full bg-black/50 border border-white/10 text-[11px] text-[#A5B0C2] font-mono flex items-center gap-2">
-                <span className="text-[#40D9E8]">https://</span>enoove.agency/preview
+                <span className="text-[#40D9E8]">https://</span>enoove.agency/featured-work
               </div>
               <div className="text-[10px] text-[#40D9E8] font-bold px-2.5 py-0.5 rounded-full bg-[#40D9E8]/10 border border-[#40D9E8]/20">
-                ACTIVE SHOWCASE
+                LIVE PRODUCTION
               </div>
             </div>
 
-            {/* Inner Content Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-5 items-center my-3">
-              <div className="md:col-span-7 text-right rtl:text-right ltr:text-left space-y-2">
+            {/* Content Preview with Real Showcase Screenshot */}
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-5 items-center my-2">
+              <div className="md:col-span-6 text-right rtl:text-right ltr:text-left space-y-2">
                 <span className="text-xs font-bold text-[#40D9E8] uppercase tracking-wider block">
                   Gastronomy & Digital Innovation
                 </span>
                 <h3 className="text-xl sm:text-2xl font-bold text-white leading-snug">
-                  Bella Vista — مطعم راقي وتجربة ضيافة ملكية
+                  Maison Savour — تجربة الضيافة والمطاعم الملكية
                 </h3>
                 <p className="text-xs sm:text-sm text-[#A5B0C2] leading-relaxed">
                   تصميم متكامل مع حجز طاولات ذكي بالذكاء الاصطناعي، وقائمة طعام تفاعلية فائقة السرعة.
                 </p>
                 <div className="flex flex-wrap gap-2 pt-2">
                   <span className="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-[11px] text-white/90">
-                    Next.js + 3D
+                    Next.js 15
                   </span>
                   <span className="px-2.5 py-1 rounded-md bg-[#647BFF]/10 border border-[#647BFF]/30 text-[11px] text-[#647BFF] font-semibold">
-                    معدل حجز +180%
+                    معدل حجز +210%
                   </span>
                 </div>
               </div>
 
-              <div className="md:col-span-5 rounded-2xl bg-gradient-to-tr from-[#0b1220] via-[#142036] to-[#1c2e4f] p-4 border border-white/10 flex flex-col justify-between h-[170px]">
-                <div className="flex items-center justify-between text-xs text-white/80">
-                  <span>لوحة الحجوزات المباشرة</span>
-                  <span className="text-emerald-400 font-bold">🟢 نشط الآن</span>
-                </div>
-                <div className="space-y-2.5">
-                  <div className="flex justify-between text-[11px] text-[#A5B0C2]">
-                    <span>الطاولات المحجوزة</span>
-                    <span className="text-white font-mono font-bold">92%</span>
-                  </div>
-                  <div className="h-2 w-full bg-white/10 rounded-full overflow-hidden">
-                    <div className="h-full bg-gradient-to-r from-[#647BFF] to-[#40D9E8] w-[92%]"></div>
-                  </div>
-                </div>
-                <div className="text-[12px] font-mono text-left rtl:text-left ltr:text-right text-[#40D9E8] font-bold">
-                  +42 حجز اليوم
+              {/* Real Mockup Image Preview */}
+              <div className="md:col-span-6 rounded-2xl border border-white/15 overflow-hidden h-[190px] relative shadow-lg group">
+                <img
+                  src="/showcase/maison-savour.jpg"
+                  alt="Maison Savour Luxury Restaurant"
+                  className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                <div className="absolute bottom-2.5 right-2.5 left-2.5 flex items-center justify-between text-[11px] text-white">
+                  <span className="px-2 py-0.5 rounded bg-black/60 font-semibold">Michelin Experience</span>
+                  <span className="text-[#40D9E8] font-bold">حجز فوري 🟢</span>
                 </div>
               </div>
             </div>
