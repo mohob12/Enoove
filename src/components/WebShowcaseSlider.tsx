@@ -181,14 +181,14 @@ export const WebShowcaseSlider: React.FC = () => {
     >
       {/* Background ambient lighting */}
       <div 
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] rounded-full blur-[160px] opacity-25 pointer-events-none transition-colors duration-1000"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] rounded-full blur-[180px] opacity-25 pointer-events-none transition-colors duration-1000"
         style={{ backgroundColor: activeProject.accent }}
       ></div>
 
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
+        <div className="text-center max-w-3xl mx-auto mb-14">
           <div className="section-tag justify-center">
             <span className="w-2 h-2 rounded-full bg-[#40D9E8] animate-ping"></span>
             <span>الخدمة 01 — تصميم وتطوير المواقع الفاخرة</span>
@@ -203,31 +203,23 @@ export const WebShowcaseSlider: React.FC = () => {
           </p>
         </div>
 
-        {/* Top Browser Simulation Bar (Inspired by Reference Image 02) */}
-        <div className={`max-w-2xl mx-auto mb-8 px-5 py-3 rounded-full backdrop-blur-2xl border shadow-lg flex items-center justify-between text-xs transition-colors duration-300 ${
+        {/* Minimalist Top Indicator Pill */}
+        <div className={`max-w-xl mx-auto mb-10 px-5 py-2.5 rounded-full backdrop-blur-2xl border shadow-lg flex items-center justify-between text-xs transition-colors duration-300 ${
           isDark 
-            ? 'bg-[#101827]/90 border-white/15 text-[#A5B0C2]' 
-            : 'bg-white/90 border-slate-200 text-slate-700 shadow-slate-200/50'
+            ? 'bg-[#101827]/85 border-white/15 text-[#A5B0C2]' 
+            : 'bg-white/85 border-slate-200 text-slate-700 shadow-slate-200/50'
         }`}>
-          <div className="flex items-center gap-3">
-            <div className="flex items-center gap-1.5">
-              <span className="w-3 h-3 rounded-full bg-[#FF5F56]/90"></span>
-              <span className="w-3 h-3 rounded-full bg-[#FFBD2E]/90"></span>
-              <span className="w-3 h-3 rounded-full bg-[#27C93F]/90"></span>
-            </div>
-            <span className="opacity-20 hidden sm:inline">|</span>
-            <div className={`px-3 py-1 rounded-full border font-mono text-[11px] flex items-center gap-1.5 ${
-              isDark ? 'bg-black/40 border-white/5 text-white' : 'bg-slate-100 border-slate-200 text-slate-800'
-            }`}>
-              <span className="text-[#0284C7] dark:text-[#40D9E8]">🔒 https://</span>
-              <span className="font-semibold">{activeProject.url}</span>
-            </div>
+          <div className="flex items-center gap-2.5">
+            <span className="w-2 h-2 rounded-full bg-[#0284C7] dark:bg-[#40D9E8] animate-pulse"></span>
+            <span className="font-mono text-[11px] font-semibold text-slate-900 dark:text-white">
+              {activeProject.url}
+            </span>
           </div>
           <div className="flex items-center gap-3">
             <span className="text-[11px] font-mono font-bold text-[#0284C7] dark:text-[#40D9E8]">
               {activeIndex + 1} / {showcaseProjects.length}
             </span>
-            <span className={`px-3 py-0.5 rounded-full text-[10px] font-medium ${
+            <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-medium ${
               isDark ? 'bg-white/10 text-white' : 'bg-slate-100 text-slate-800 border border-slate-200'
             }`}>
               {lang === 'ar' ? activeProject.categoryAr : activeProject.categoryEn}
@@ -235,8 +227,8 @@ export const WebShowcaseSlider: React.FC = () => {
           </div>
         </div>
 
-        {/* 3D Spatial Carousel Stage */}
-        <div className="relative w-full h-[540px] sm:h-[640px] flex items-center justify-center perspective-[1400px] overflow-hidden">
+        {/* 3D Spatial Carousel Stage: TALL PORTRAIT ASPECT RATIO (No top/left/right borders) */}
+        <div className="relative w-full h-[620px] sm:h-[720px] flex items-center justify-center perspective-[1400px] overflow-hidden">
           {showcaseProjects.map((item, index) => {
             const count = showcaseProjects.length;
             let offset = (index - activeIndex) % count;
@@ -247,10 +239,11 @@ export const WebShowcaseSlider: React.FC = () => {
             const isLeft = offset < 0;
             const absOffset = Math.abs(offset);
 
-            const translateX = offset * 320;
-            const translateZ = -absOffset * 180;
-            const rotateY = isCenter ? 0 : isLeft ? 28 : -28;
-            const scale = isCenter ? 1 : 0.82;
+            // Spatial positioning for tall portrait cards
+            const translateX = offset * 340;
+            const translateZ = -absOffset * 190;
+            const rotateY = isCenter ? 0 : isLeft ? 26 : -26;
+            const scale = isCenter ? 1 : 0.84;
             const opacity = isCenter ? 1 : absOffset === 1 ? 0.6 : 0;
             const zIndex = 30 - absOffset;
 
@@ -258,10 +251,10 @@ export const WebShowcaseSlider: React.FC = () => {
               <div
                 key={item.id}
                 onClick={() => setActiveIndex(index)}
-                className={`absolute w-[94%] sm:w-[540px] md:w-[620px] h-[500px] sm:h-[600px] rounded-3xl p-4 sm:p-5 flex flex-col justify-between cursor-pointer transition-all duration-700 ease-out select-none border backdrop-blur-2xl shadow-2xl ${
-                  isDark ? 'bg-[#0d1424] border-white/20' : 'bg-white border-slate-200 shadow-slate-200/60'
-                } ${
-                  isCenter ? 'ring-2 ring-[#40D9E8]/60 shadow-[0_20px_60px_rgba(64,217,232,0.25)]' : 'hidden sm:flex'
+                className={`absolute w-[86%] sm:w-[400px] md:w-[440px] h-[580px] sm:h-[680px] rounded-3xl overflow-hidden flex flex-col justify-end cursor-pointer transition-all duration-700 ease-out select-none shadow-[0_30px_90px_rgba(0,0,0,0.85)] ${
+                  isCenter 
+                    ? 'ring-2 ring-[#40D9E8]/70 shadow-[0_25px_70px_rgba(64,217,232,0.3)]' 
+                    : 'hidden sm:flex'
                 }`}
                 style={{
                   transform: `translateX(${translateX}px) translateZ(${translateZ}px) rotateY(${rotateY}deg) scale(${scale})`,
@@ -269,12 +262,21 @@ export const WebShowcaseSlider: React.FC = () => {
                   zIndex,
                 }}
               >
-                {/* Browser Frame Top Bar */}
-                <div className="flex items-center justify-between pb-3 border-b border-black/5 dark:border-white/10 shrink-0">
-                  <div className="flex items-center gap-2">
-                    <span className="text-xs font-bold tracking-wide uppercase font-mono text-slate-800 dark:text-white">
-                      {item.url}
-                    </span>
+                {/* 1. Full-Bleed Image: No borders on top, left, or right */}
+                <img
+                  src={item.image}
+                  alt={item.titleAr}
+                  className="absolute inset-0 w-full h-full object-cover object-top showcase-img"
+                  loading="eager"
+                />
+
+                {/* Subtle top shade for action buttons */}
+                <div className="absolute top-0 left-0 right-0 h-28 bg-gradient-to-b from-black/70 to-transparent pointer-events-none z-10"></div>
+
+                {/* 2. Top Minimalist Floating Action Badges */}
+                <div className="absolute top-4 right-4 left-4 flex items-center justify-between z-20">
+                  <div className="px-3 py-1 rounded-full text-[10px] font-mono font-bold text-white bg-black/50 backdrop-blur-md border border-white/15">
+                    {item.url}
                   </div>
                   <div className="flex items-center gap-2">
                     <button
@@ -282,12 +284,10 @@ export const WebShowcaseSlider: React.FC = () => {
                         e.stopPropagation();
                         toggleLike(item.id);
                       }}
-                      className={`p-1.5 rounded-full border transition-all cursor-pointer ${
+                      className={`p-2 rounded-full backdrop-blur-md border transition-all cursor-pointer ${
                         liked[item.id]
-                          ? 'bg-red-500/20 border-red-500/40 text-red-500'
-                          : isDark
-                            ? 'bg-white/5 border-white/10 text-white/60 hover:text-white'
-                            : 'bg-slate-100 border-slate-200 text-slate-600 hover:text-slate-900'
+                          ? 'bg-red-500/30 border-red-500/60 text-red-400'
+                          : 'bg-black/40 border-white/20 text-white/80 hover:text-white'
                       }`}
                       title="حفظ في المفضلة"
                     >
@@ -298,77 +298,53 @@ export const WebShowcaseSlider: React.FC = () => {
                         e.stopPropagation();
                         setModalImage(item.image);
                       }}
-                      className={`p-1.5 rounded-full border transition-colors cursor-pointer ${
-                        isDark 
-                          ? 'bg-white/5 hover:bg-white/15 border-white/10 text-white/70 hover:text-white' 
-                          : 'bg-slate-100 hover:bg-slate-200 border-slate-200 text-slate-700 hover:text-slate-900'
-                      }`}
-                      title="تكبير ومعاينة الواجهة كاملة"
+                      className="p-2 rounded-full bg-black/40 hover:bg-black/60 backdrop-blur-md border border-white/20 text-white transition-colors cursor-pointer"
+                      title="معاينة الواجهة كاملة بدقة عالية"
                     >
                       <ExpandIcon size={14} />
                     </button>
                   </div>
                 </div>
 
-                {/* High-Resolution Enhanced Website Interface Viewport */}
+                {/* 3. Bottom-Only Translucent Luxury Frosted Glass Overlay */}
                 <div 
-                  className="my-3 rounded-2xl border border-black/5 dark:border-white/10 bg-slate-900 flex-1 overflow-hidden relative group/img shadow-inner"
-                  onClick={(e) => {
-                    if (isCenter) {
-                      e.stopPropagation();
-                      setModalImage(item.image);
-                    }
-                  }}
+                  className={`relative z-20 p-5 sm:p-6 backdrop-blur-2xl border-t transition-colors duration-300 ${
+                    isDark 
+                      ? 'bg-gradient-to-t from-[#080B14]/98 via-[#080B14]/85 to-[#080B14]/40 border-white/15 text-white' 
+                      : 'bg-gradient-to-t from-white/98 via-white/90 to-white/60 border-slate-200/80 text-slate-900 shadow-lg'
+                  }`}
                 >
-                  <img
-                    src={item.image}
-                    alt={item.titleAr}
-                    className="w-full h-full object-cover object-top showcase-img transition-transform duration-700 group-hover/img:scale-105"
-                    loading="eager"
-                  />
-
-                  {/* Gradient Overlay for subtle depth */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent opacity-80 pointer-events-none"></div>
-
-                  {/* Overlay badge with KPI metric */}
-                  <div className="absolute bottom-3 right-3 left-3 flex items-center justify-between pointer-events-none">
-                    <span className="px-3 py-1 rounded-full text-[11px] font-bold text-white bg-black/80 border border-white/20 backdrop-blur-md">
-                      ⚡ {lang === 'ar' ? item.metricsAr : item.metricsEn}
-                    </span>
-                    <span className="px-2.5 py-1 rounded-full text-[10px] font-medium text-[#40D9E8] bg-black/80 border border-[#40D9E8]/40 backdrop-blur-md">
-                      اضغط للتكبير بدقة عالية 🔍
-                    </span>
-                  </div>
-                </div>
-
-                {/* Project Details Footer */}
-                <div className="pt-2 shrink-0">
                   <div className="flex items-center justify-between mb-1.5">
                     <span className="text-[11px] font-bold uppercase tracking-wider text-[#0284C7] dark:text-[#40D9E8]">
                       {lang === 'ar' ? item.categoryAr : item.categoryEn}
                     </span>
-                    <span className="text-[10px] text-slate-500 dark:text-[#A5B0C2]">Enoove Certified Design</span>
+                    <span className="text-[10px] font-semibold text-slate-500 dark:text-[#A5B0C2]">Enoove Certified</span>
                   </div>
-                  <h3 className="text-base sm:text-lg font-bold leading-tight mb-1 truncate text-slate-900 dark:text-white">
+
+                  <h3 className="text-base sm:text-lg font-bold leading-tight mb-2 text-slate-900 dark:text-white line-clamp-1">
                     {lang === 'ar' ? item.titleAr : item.titleEn}
                   </h3>
-                  
+
                   {isCenter && (
-                    <p className="text-xs line-clamp-1 mb-2 text-slate-600 dark:text-[#A5B0C2]">
+                    <p className="text-xs line-clamp-2 mb-3 leading-relaxed text-slate-600 dark:text-[#A5B0C2]">
                       {lang === 'ar' ? item.descAr : item.descEn}
                     </p>
                   )}
 
-                  <div className="flex flex-wrap gap-1.5">
-                    {item.tags.map((tg) => (
-                      <span key={tg} className={`px-2 py-0.5 rounded-md border text-[10px] ${
-                        isDark 
-                          ? 'bg-white/5 border-white/10 text-white/80' 
-                          : 'bg-slate-100 border-slate-200 text-slate-700'
-                      }`}>
-                        {tg}
-                      </span>
-                    ))}
+                  <div className="flex items-center justify-between gap-2 pt-2 border-t border-black/5 dark:border-white/10">
+                    <div className="px-2.5 py-1 rounded-lg text-[10px] font-mono font-semibold bg-black/10 dark:bg-black/50 text-[#0284C7] dark:text-[#40D9E8] border border-black/5 dark:border-white/10 truncate">
+                      ⚡ {lang === 'ar' ? item.metricsAr : item.metricsEn}
+                    </div>
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setModalImage(item.image);
+                      }}
+                      className="text-[11px] font-bold text-slate-900 dark:text-white hover:underline flex items-center gap-1 cursor-pointer shrink-0"
+                    >
+                      <span>عرض كامل</span>
+                      <span>🔍</span>
+                    </button>
                   </div>
                 </div>
 
@@ -378,7 +354,7 @@ export const WebShowcaseSlider: React.FC = () => {
         </div>
 
         {/* Floating Controller Pill (Reference Image 02) */}
-        <div className="max-w-md mx-auto mt-8 flex flex-col items-center gap-4">
+        <div className="max-w-md mx-auto mt-6 flex flex-col items-center gap-4">
           <div className={`px-5 py-3 rounded-full backdrop-blur-2xl border shadow-xl flex items-center justify-between w-full gap-4 transition-colors ${
             isDark 
               ? 'bg-[#101827]/95 border-white/20' 
@@ -457,7 +433,7 @@ export const WebShowcaseSlider: React.FC = () => {
           onClick={() => setModalImage(null)}
         >
           <div 
-            className="relative max-w-5xl w-full max-h-[92vh] bg-[#101827] dark:bg-[#101827] rounded-3xl border border-white/20 overflow-hidden flex flex-col shadow-2xl"
+            className="relative max-w-5xl w-full max-h-[92vh] bg-[#101827] rounded-3xl border border-white/20 overflow-hidden flex flex-col shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header */}
