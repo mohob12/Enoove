@@ -22,58 +22,73 @@ interface ShowcaseProject {
 const showcaseProjects: ShowcaseProject[] = [
   {
     id: 'maison-savour',
-    image: '/showcase/maison-savour.jpg',
+    image: '/showcase_4k/02_maison_savour_4k.jpg',
     url: 'maisonsavour.gourmet',
     titleAr: 'Maison Savour — مطعم فاخر وتجربة ضيافة ملكية',
     titleEn: 'Maison Savour — Fine Dining & Gastronomy Experience',
     categoryAr: 'المطاعم والكافيهات الفاخرة',
     categoryEn: 'Luxury Dining & Gastronomy',
-    descAr: 'تصميم داكن أنيق يبرز الأطباق بجودة سينمائية مع نظام حجز طاولات تفاعلي.',
-    descEn: 'Cinematic dark UI showcasing Michelin-standard dishes with an intelligent table reservation engine.',
-    tags: ['Next.js 15', 'Interactive Menu', 'Table Booking API', 'Apple Pay'],
+    descAr: 'تصميم داكن أنيق يبرز الأطباق بجودة سينمائية 4K مع نظام حجز طاولات تفاعلي.',
+    descEn: 'Cinematic dark 4K UI showcasing Michelin-standard dishes with an intelligent table reservation engine.',
+    tags: ['Next.js 15', '4K Visuals', 'Table Booking API', 'Apple Pay'],
     metricsAr: '+210% زيادة الحجوزات المباشرة',
     metricsEn: '+210% Direct Bookings Growth',
     accent: '#F97316'
   },
   {
-    id: 'astra-dent',
-    image: '/showcase/astra-dent.jpg',
-    url: 'astradent.clinic',
-    titleAr: 'Astra Dent — مركز طب وتجميل الأسنان المتقدم',
-    titleEn: 'Astra Dent — High-Tech Dental & Medical Clinic',
+    id: 'royal-crest',
+    image: '/showcase_4k/06_royal_crest_luxury_hotel_4k.jpg',
+    url: 'royalcrest.resort',
+    titleAr: 'Royal Crest — فندق ومنتجع 5 نجوم ملكي',
+    titleEn: 'Royal Crest — 5-Star Hotel & Presidential Suites',
+    categoryAr: 'الفنادق والمنتجعات الملكية',
+    categoryEn: 'Hotels & Luxury Resorts',
+    descAr: 'أجواء ذهبية ملكية وفخامة داكنة لاستعراض الأجنحة، المرافق والسبا، مع محرك حجز غرف فوري.',
+    descEn: 'Regal obsidian and gold aesthetic showcasing presidential suites, spa, and booking.',
+    tags: ['Real-time PMS Sync', 'Virtual Room 4K', 'VIP Concierge'],
+    metricsAr: '98% نسبة إشغال الغرف',
+    metricsEn: '98% Average Occupancy Rate',
+    accent: '#EAB308'
+  },
+  {
+    id: 'lumiere-clinic',
+    image: '/showcase_4k/08_lumiere_dermatology_clinic_4k.jpg',
+    url: 'lumierederm.clinic',
+    titleAr: 'Lumière — مركز الجلدية والتجميل الطبي المتقدم',
+    titleEn: 'Lumière — Aesthetic Dermatology & Laser Clinic',
     categoryAr: 'العيادات والمراكز الطبية',
-    categoryEn: 'Medical & Dental Healthcare',
-    descAr: 'واجهة طبية ناصعة وموثوقة مع ملفات الأطباء، وحجز مواعيد فوري في 30 ثانية.',
-    descEn: 'Pristine healthcare interface featuring doctor profiles and instant 30s appointment scheduling.',
-    tags: ['HIPAA Certified', 'Instant Booking', 'WhatsApp Sync', 'Patient Portal'],
+    categoryEn: 'Medical & Aesthetic Healthcare',
+    descAr: 'واجهة طبية وتجميلية سويسرية فائقة النقاء لاستعراض العلاجات المتقدمة وحجز المواعيد الفوري.',
+    descEn: 'Swiss-inspired aesthetic dermatology portal with physician profiles and instant 30s booking.',
+    tags: ['Medical Telemetry', 'Doctor Profiles', 'Instant 30s Booking'],
     metricsAr: '99.8% التزام بالمواعيد',
     metricsEn: '99.8% Attendance Rate',
     accent: '#38BDF8'
   },
   {
     id: 'ahead-travel',
-    image: '/showcase/ahead-travel.jpg',
+    image: '/showcase_4k/14_ahead_travel_experiences_4k.jpg',
     url: 'aheadjourneys.world',
     titleAr: 'AHEAD — وكالة رحلات واستكشافات فاخرة',
     titleEn: 'AHEAD — Curated Luxury Travel & Expeditions',
     categoryAr: 'السياحة والسفر الدولي',
     categoryEn: 'Luxury Travel & Expeditions',
-    descAr: 'تصميم تفاعلي غامر مستوحى من نافذة الطائرة، يستعرض الوجهات العالمية.',
+    descAr: 'تصميم تفاعلي غامر مستوحى من نافذة الطائرة، يستعرض الوجهات العالمية وباقات السفر مع حجز فوري.',
     descEn: 'Immersive airplane-window inspired UI curating unforgettable global destinations.',
-    tags: ['Interactive 3D Maps', 'Custom Itineraries', 'Multi-Currency', 'Live Weather'],
+    tags: ['Interactive 3D Maps', 'Custom Itineraries', 'Multi-Currency'],
     metricsAr: '+320% نمو مبيعات الباقات',
     metricsEn: '+320% Package Sales Growth',
     accent: '#FB923C'
   },
   {
     id: 'livora-interiors',
-    image: '/showcase/livora-interiors.jpg',
+    image: '/showcase_4k/04_livora_interiors_4k.jpg',
     url: 'livorainteriors.design',
     titleAr: 'Livora Interiors — أثاث راقي وتصميم داخلي معماري',
     titleEn: 'Livora Interiors — Haute Architecture & Furniture',
-    categoryAr: 'العقارات والتصميم الداخلي',
+    categoryAr: 'العقارات والتصميم المعماري',
     categoryEn: 'Real Estate & Interior Architecture',
-    descAr: 'استعراض معماري أنيق للأثاث الفاخر والغرف وتنسيقات المنازل مع كتالوج تفاعلي.',
+    descAr: 'استعراض معماري أنيق للأثاث الفاخر والغرف وتنسيقات المنازل مع كتالوج تفاعلي للشراء.',
     descEn: 'Architectural aesthetic showcasing curated designer furniture and luxury living spaces.',
     tags: ['3D Room Configurator', 'E-commerce Engine', 'Bespoke Inquiries'],
     metricsAr: 'مبيعات +1.8M$ في أول 3 أشهر',
@@ -81,29 +96,14 @@ const showcaseProjects: ShowcaseProject[] = [
     accent: '#A3E635'
   },
   {
-    id: 'royal-crest',
-    image: '/showcase/royal-crest.jpg',
-    url: 'royalcrest.resort',
-    titleAr: 'Royal Crest — فندق ومنتجع 5 نجوم ملكي',
-    titleEn: 'Royal Crest — 5-Star Hotel & Presidential Suites',
-    categoryAr: 'الفنادق والمنتجعات',
-    categoryEn: 'Hotels & Luxury Resorts',
-    descAr: 'أجواء ذهبية ملكية وفخامة داكنة لاستعراض الأجنحة، المرافق والسبا.',
-    descEn: 'Regal obsidian and gold aesthetic showcasing presidential suites, spa, and booking.',
-    tags: ['Real-time PMS Sync', 'Virtual Room Tour', 'VIP Concierge'],
-    metricsAr: '98% نسبة إشغال الغرف',
-    metricsEn: '98% Average Occupancy Rate',
-    accent: '#EAB308'
-  },
-  {
-    id: 'cake-bakery',
-    image: '/showcase/cake-bakery.jpg',
+    id: 'cake-experience',
+    image: '/showcase_4k/03_cake_experience_4k.jpg',
     url: 'cake.atelier',
     titleAr: 'CAKÉ — متجر حلويات وكيك فاخر حسب الطلب',
     titleEn: 'CAKÉ — Haute Confectionery & Gourmet E-Commerce',
     categoryAr: 'التجارة الإلكترونية الفاخرة',
     categoryEn: 'Luxury Gourmet E-Commerce',
-    descAr: 'كتالوج تفاعلي 360° لاختيار كيك المناسبات حسب المزاج والمكونات.',
+    descAr: 'كتالوج تفاعلي 360° لاختيار كيك المناسبات حسب المزاج وتجربة دفع فائقة السلاسة.',
     descEn: '360° interactive product catalog allowing mood-based customization with frictionless checkout.',
     tags: ['Headless Shopify', 'Custom Cake Builder', 'Same-Day Dispatch'],
     metricsAr: '+180% معدل تحويل السلة',
@@ -111,14 +111,29 @@ const showcaseProjects: ShowcaseProject[] = [
     accent: '#EC4899'
   },
   {
+    id: 'solara-dining',
+    image: '/showcase_4k/09_solara_fine_dining_4k.jpg',
+    url: 'solaradining.lounge',
+    titleAr: 'Solara — لاونج ومطعم إطلالات بانورامية فاخر',
+    titleEn: 'Solara — Fine Dining & Panoramic Rooftop Lounge',
+    categoryAr: 'المطاعم واللاونج الراقي',
+    categoryEn: 'Luxury Rooftop & Dining',
+    descAr: 'تجربة ضيافة استثنائية مع حجوزات غروب الشمس، عروض حية، وقائمة طعام ملكية.',
+    descEn: 'Skyline sunset reservations, live culinary performances, and bespoke cocktail tasting.',
+    tags: ['Rooftop Booking', 'Live Event Sync', 'VIP Tables'],
+    metricsAr: '+240% إقبال ليلي',
+    metricsEn: '+240% Nightly Footfall',
+    accent: '#F59E0B'
+  },
+  {
     id: 'travel-world',
-    image: '/showcase/travel-world.jpg',
+    image: '/showcase_4k/01_travel_around_the_world_4k.jpg',
     url: 'travelworld.voyage',
     titleAr: 'Travel Around The World — بوابة حجز طيران وفنادق',
     titleEn: 'Travel Around The World — Global Booking Portal',
     categoryAr: 'بوابات الحجز الإلكتروني',
     categoryEn: 'Online Travel Agency (OTA)',
-    descAr: 'محرك بحث متطور للطيران والفنادق، باقات سفر شائعة، وعروض حصرية.',
+    descAr: 'محرك بحث متطور للطيران والفنادق، باقات سفر شائعة، وعروض حصرية بتجربة استخدام نظيفة.',
     descEn: 'Comprehensive flight & hotel search engine with clean UI and curated worldwide deals.',
     tags: ['GDS Flight API', 'Dynamic Packaging', 'Instant Confirmation'],
     metricsAr: '45,000+ تذكرة شهرياً',
@@ -126,19 +141,94 @@ const showcaseProjects: ShowcaseProject[] = [
     accent: '#3B82F6'
   },
   {
+    id: 'sugar-bliss',
+    image: '/showcase_4k/11_sugar_bliss_bakery_4k.jpg',
+    url: 'sugarbliss.sweets',
+    titleAr: 'Sugar Bliss — معمل ومخبز الحلويات الحرفية',
+    titleEn: 'Sugar Bliss — Artisan Bakery & Sweet Atelier',
+    categoryAr: 'المخابز والحلويات الحرفية',
+    categoryEn: 'Artisan Bakery & Confections',
+    descAr: 'تصميم باستيل أنيق ومبهج لاستعراض التورتات والحلويات المصنوعة يدوياً مع طلبات التوصيل الفوري.',
+    descEn: 'Pastel aesthetic celebrating handmade artisan cakes with instant local dispatch tracking.',
+    tags: ['Custom Orders', 'Local Express Delivery', 'Instagram Sync'],
+    metricsAr: '+195% طلبات يومية',
+    metricsEn: '+195% Daily Orders',
+    accent: '#F472B6'
+  },
+  {
+    id: 'flavoria-steak',
+    image: '/showcase_4k/13_flavoria_fine_dining_4k.jpg',
+    url: 'flavoria.cuisine',
+    titleAr: 'Flavoria — ستيك هاوس وتجربة طهي حية',
+    titleEn: 'Flavoria — Prime Steakhouse & Live Grill Atelier',
+    categoryAr: 'المطاعم والستيك هاوس',
+    categoryEn: 'Steakhouse & Prime Meats',
+    descAr: 'أجواء نارية دافئة لعشاق اللحوم المعتقة والمأكولات المشوية مع نظام حجز طاولات فوري.',
+    descEn: 'Warm fiery atmosphere featuring dry-aged beef showcases and chef-table reservations.',
+    tags: ['Dry-Aged Showcase', 'Chef Table Reserve', 'Live Grilling'],
+    metricsAr: 'حجوزات مكتملة 100%',
+    metricsEn: '100% Fully Booked Weekends',
+    accent: '#EF4444'
+  },
+  {
+    id: 'boulangerie-pastry',
+    image: '/showcase_4k/07_boulangerie_pastry_4k.jpg',
+    url: 'boulangerie.paris',
+    titleAr: 'Boulangerie — مخبز فرنسي راقي ومعجنات باريسية',
+    titleEn: 'Boulangerie — Parisian Artisan Pastry & Café',
+    categoryAr: 'المقاهي والمخابز الفرنسية',
+    categoryEn: 'Parisian Café & Bakery',
+    descAr: 'واجهة كلاسيكية دافئة تستحضر المخابز الباريسية العريقة مع اشتراكات الفطور الصباحي اليومي.',
+    descEn: 'Warm vintage Parisian ambience offering morning bakery subscriptions and curbside pickup.',
+    tags: ['Breakfast Subscriptions', 'Artisan Bakery', 'Fresh Pick-up'],
+    metricsAr: '4.9/5 نجوم من 8,000 عميل',
+    metricsEn: '4.9/5 Rating from 8k Patrons',
+    accent: '#D97706'
+  },
+  {
+    id: 'green-gourmet',
+    image: '/showcase_4k/12_green_gourmet_cuisine_4k.jpg',
+    url: 'greengourmet.bio',
+    titleAr: 'Green Gourmet — مأكولات عضوية وصحية فاخرة',
+    titleEn: 'Green Gourmet — Farm-to-Table Organic Dining',
+    categoryAr: 'المطاعم الصحية والعضوية',
+    categoryEn: 'Organic & Healthy Dining',
+    descAr: 'منصة للمطاعم الصحية والمزارع العضوية بحساب السعرات الحرارية وخطط الوجبات الأسبوعية.',
+    descEn: 'Nutritional transparency engine featuring weekly meal prep subscriptions and farm-to-fork tracing.',
+    tags: ['Macro Calculator', 'Weekly Meal Plans', 'Eco-Packaging'],
+    metricsAr: '+280% اشتراكات شهرية',
+    metricsEn: '+280% Monthly Subscribers',
+    accent: '#10B981'
+  },
+  {
     id: 'ticket-plan',
-    image: '/showcase/ticket-plan.jpg',
+    image: '/showcase_4k/10_ticket_plan_travel_4k.jpg',
     url: 'ticketplan.tours',
     titleAr: 'Ticket Plan — منصة الوجهات السياحية والرحلات',
     titleEn: 'Ticket Plan — Curated Tours & Global Destinations',
     categoryAr: 'تنظيم الرحلات الدولية',
     categoryEn: 'Global Tours & Itineraries',
-    descAr: 'استعراض أجمل الوجهات السياحية العالمية مع عروض سياحية مخصصة.',
+    descAr: 'استعراض أجمل المعالم والوجهات العالمية مع باقات سياحية عائلية وعروض مخفضة.',
     descEn: 'Dynamic destination guide highlighting global landmarks with tailor-made tour itineraries.',
     tags: ['Destination Guides', 'Group Tours', 'Mobile App Sync'],
     metricsAr: 'تقييم 4.9/5 من 12,000 مسافر',
     metricsEn: '4.9/5 Rating from 12k Travelers',
-    accent: '#A855F7'
+    accent: '#8B5CF6'
+  },
+  {
+    id: 'tlus-dining',
+    image: '/showcase_4k/15_tlus_taste_of_perfection_4k.jpg',
+    url: 'tlusperfection.dining',
+    titleAr: 'TLUS — فنون التذوق والطهي العصري',
+    titleEn: 'TLUS — Modern Gastronomy & Executive Dining',
+    categoryAr: 'المطاعم العصرية الحديثة',
+    categoryEn: 'Modern Culinary Arts',
+    descAr: 'إبداع طهي عصري يجمع بين التراث والابتكار مع تجربة ضيافة حصرية لرجال الأعمال والشركاء.',
+    descEn: 'Avant-garde culinary artistry crafted specifically for executive corporate banquets and private galas.',
+    tags: ['Modern Gastronomy', 'Executive Dining', 'VIP Lounge'],
+    metricsAr: '+170% مناسبات خاصة',
+    metricsEn: '+170% Corporate Private Events',
+    accent: '#6366F1'
   }
 ];
 
@@ -191,7 +281,7 @@ export const WebShowcaseSlider: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-14">
           <div className="section-tag justify-center">
             <span className="w-2 h-2 rounded-full bg-[#40D9E8] animate-ping"></span>
-            <span>الخدمة 01 — تصميم وتطوير المواقع الفاخرة</span>
+            <span>الخدمة 01 — تصميم وتطوير المواقع الفاخرة (4K Ultra-Res)</span>
           </div>
           <h2 className="section-title text-gradient">
             {lang === 'ar' ? 'واجهات حصرية وتجارب رقمية استثنائية' : 'Bespoke Interfaces & Award-Caliber Websites'}
@@ -227,8 +317,8 @@ export const WebShowcaseSlider: React.FC = () => {
           </div>
         </div>
 
-        {/* 3D Spatial Carousel Stage: TALL PORTRAIT ASPECT RATIO (Frameless full-bleed image) */}
-        <div className="relative w-full h-[620px] sm:h-[720px] flex items-center justify-center perspective-[1400px] overflow-hidden">
+        {/* 3D Spatial Carousel Stage: TALL PORTRAIT ASPECT RATIO (4K Resolution) */}
+        <div className="relative w-full h-[640px] sm:h-[740px] flex items-center justify-center perspective-[1400px] overflow-hidden">
           {showcaseProjects.map((item, index) => {
             const count = showcaseProjects.length;
             let offset = (index - activeIndex) % count;
@@ -250,7 +340,7 @@ export const WebShowcaseSlider: React.FC = () => {
               <div
                 key={item.id}
                 onClick={() => setActiveIndex(index)}
-                className={`absolute w-[86%] sm:w-[400px] md:w-[440px] h-[580px] sm:h-[680px] rounded-3xl overflow-hidden flex flex-col justify-end cursor-pointer transition-all duration-700 ease-out select-none shadow-[0_30px_90px_rgba(0,0,0,0.85)] ${
+                className={`absolute w-[86%] sm:w-[400px] md:w-[440px] h-[600px] sm:h-[700px] rounded-3xl overflow-hidden flex flex-col justify-end cursor-pointer transition-all duration-700 ease-out select-none shadow-[0_30px_90px_rgba(0,0,0,0.85)] ${
                   isCenter 
                     ? 'ring-2 ring-[#40D9E8]/70 shadow-[0_25px_70px_rgba(64,217,232,0.3)]' 
                     : 'hidden sm:flex'
@@ -261,7 +351,7 @@ export const WebShowcaseSlider: React.FC = () => {
                   zIndex,
                 }}
               >
-                {/* 1. Full-Bleed Image: No borders on top, left, or right */}
+                {/* 1. Full-Bleed 4K Image: No borders on top, left, or right */}
                 <img
                   src={item.image}
                   alt={item.titleAr}
@@ -298,14 +388,14 @@ export const WebShowcaseSlider: React.FC = () => {
                         setModalImage(item.image);
                       }}
                       className="p-2 rounded-full bg-black/50 hover:bg-black/70 backdrop-blur-md border border-white/25 text-white transition-colors cursor-pointer"
-                      title="معاينة الواجهة كاملة بدقة عالية"
+                      title="معاينة الواجهة كاملة بدقة 4K"
                     >
                       <ExpandIcon size={14} />
                     </button>
                   </div>
                 </div>
 
-                {/* 2. DEDICATED BACKGROUND GRADIENT LAYER (Strictly Behind the text, not blended with the text!) */}
+                {/* 2. DEDICATED BACKGROUND GRADIENT LAYER (Strictly Behind the text) */}
                 <div 
                   className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-black via-black/90 to-transparent pointer-events-none z-10"
                 />
@@ -363,7 +453,7 @@ export const WebShowcaseSlider: React.FC = () => {
                       className="font-bold flex items-center gap-1 cursor-pointer transition-colors bg-white/15 hover:bg-white/25 px-2.5 py-1 rounded-full border border-white/25 shrink-0"
                       style={{ color: '#FFFFFF' }}
                     >
-                      <span>عرض كامل</span>
+                      <span>عرض كامل 4K</span>
                       <span>🔍</span>
                     </button>
                   </div>
@@ -447,20 +537,20 @@ export const WebShowcaseSlider: React.FC = () => {
 
       </div>
 
-      {/* Full-Page Image Lightbox Modal with Crisp High Resolution */}
+      {/* Full-Page Image Lightbox Modal with Crisp 4K Resolution */}
       {modalImage && (
         <div 
-          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-2xl flex flex-col items-center justify-center p-3 sm:p-6 animate-fadeIn"
+          className="fixed inset-0 z-50 bg-black/92 backdrop-blur-2xl flex flex-col items-center justify-center p-3 sm:p-6 animate-fadeIn"
           onClick={() => setModalImage(null)}
         >
           <div 
-            className="relative max-w-5xl w-full max-h-[92vh] bg-[#101827] rounded-3xl border border-white/20 overflow-hidden flex flex-col shadow-2xl"
+            className="relative max-w-5xl w-full max-h-[94vh] bg-[#0c1220] rounded-3xl border border-white/20 overflow-hidden flex flex-col shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header */}
-            <div className="px-6 py-4 border-b border-white/10 flex items-center justify-between bg-black/50">
+            <div className="px-6 py-4 border-b border-white/10 flex items-center justify-between bg-black/60">
               <span className="text-sm font-bold text-white flex items-center gap-2">
-                <span className="text-[#40D9E8]">معاينة الواجهة كاملة بأعلى دقة ووضوح</span>
+                <span className="text-[#40D9E8]">معاينة الواجهة كاملة بدقة فائقة 4K Ultra-Res</span>
               </span>
               <button
                 onClick={() => setModalImage(null)}
@@ -471,10 +561,10 @@ export const WebShowcaseSlider: React.FC = () => {
             </div>
 
             {/* Scrollable Full Landing Page Preview */}
-            <div className="overflow-y-auto max-h-[calc(92vh-70px)] p-4 bg-[#080B14] flex justify-center">
+            <div className="overflow-y-auto max-h-[calc(94vh-70px)] p-4 bg-[#06080F] flex justify-center">
               <img
                 src={modalImage}
-                alt="Full Landing Page Preview"
+                alt="Full Landing Page Preview 4K"
                 className="w-full max-w-3xl h-auto rounded-xl shadow-2xl showcase-img"
               />
             </div>

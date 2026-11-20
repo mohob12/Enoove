@@ -21,23 +21,23 @@ const portfolioData: PortfolioItem[] = [
     category: 'web',
     titleAr: 'Maison Savour — مطعم فاخر وتجربة ضيافة ملكية',
     titleEn: 'Maison Savour — Luxury Gastronomy & Dining',
-    descAr: 'تصميم داكن أنيق يبرز الأطباق بجودة سينمائية مع نظام حجز طاولات تفاعلي.',
-    descEn: 'Cinematic dark UI showcasing culinary art with interactive table bookings.',
+    descAr: 'تصميم داكن أنيق يبرز الأطباق بجودة سينمائية 4K مع نظام حجز طاولات تفاعلي.',
+    descEn: 'Cinematic dark 4K UI showcasing culinary art with interactive table bookings.',
     tag: 'Hospitality & Web',
     metrics: '+210% نمو الحجوزات',
-    image: '/showcase/maison-savour.jpg',
+    image: '/showcase_4k/02_maison_savour_4k.jpg',
     accent: '#F97316'
   },
   {
     id: 'p2',
     category: 'web',
-    titleAr: 'Astra Dent — مركز طب وتجميل الأسنان المتقدم',
-    titleEn: 'Astra Dent — Advanced Dental Healthcare',
+    titleAr: 'Lumière — مركز الجلدية والتجميل الطبي المتقدم',
+    titleEn: 'Lumière — Aesthetic Dermatology & Laser Clinic',
     descAr: 'واجهة صحية ناصعة مع حجز مواعيد فوري في 30 ثانية وتأكيد واتساب آلي.',
     descEn: 'Pristine medical clinic interface with 30s appointment scheduling.',
     tag: 'Healthcare Web',
     metrics: '99.8% التزام بالمواعيد',
-    image: '/showcase/astra-dent.jpg',
+    image: '/showcase_4k/08_lumiere_dermatology_clinic_4k.jpg',
     accent: '#38BDF8'
   },
   {
@@ -49,7 +49,7 @@ const portfolioData: PortfolioItem[] = [
     descEn: 'Immersive travel interface presenting global destinations and custom tours.',
     tag: 'Travel & Tourism',
     metrics: '+320% نمو المبيعات',
-    image: '/showcase/ahead-travel.jpg',
+    image: '/showcase_4k/14_ahead_travel_experiences_4k.jpg',
     accent: '#FB923C'
   },
   {
@@ -61,7 +61,7 @@ const portfolioData: PortfolioItem[] = [
     descEn: 'Architectural furniture catalog with customized purchasing workflow.',
     tag: 'Architecture & E-Com',
     metrics: 'مبيعات +1.8M$ في أول ربع',
-    image: '/showcase/livora-interiors.jpg',
+    image: '/showcase_4k/04_livora_interiors_4k.jpg',
     accent: '#A3E635'
   },
   {
@@ -73,7 +73,7 @@ const portfolioData: PortfolioItem[] = [
     descEn: 'Regal obsidian and gold aesthetic showcasing presidential suites and direct booking.',
     tag: 'Resort & Booking',
     metrics: '98% نسبة إشغال الغرف',
-    image: '/showcase/royal-crest.jpg',
+    image: '/showcase_4k/06_royal_crest_luxury_hotel_4k.jpg',
     accent: '#EAB308'
   },
   {
@@ -85,7 +85,7 @@ const portfolioData: PortfolioItem[] = [
     descEn: '360° custom cake builder with effortless instant mobile checkout.',
     tag: 'Luxury E-Commerce',
     metrics: '+180% تحويل السلة',
-    image: '/showcase/cake-bakery.jpg',
+    image: '/showcase_4k/03_cake_experience_4k.jpg',
     accent: '#EC4899'
   }
 ];

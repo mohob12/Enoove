@@ -114,9 +114,9 @@ export const Hero: React.FC = () => {
               {/* Real Mockup Image Preview */}
               <div className="md:col-span-6 rounded-2xl border border-white/15 overflow-hidden h-[190px] relative shadow-lg group">
                 <img
-                  src="/showcase/maison-savour.jpg"
+                  src="/showcase_4k/02_maison_savour_4k.jpg"
                   alt="Maison Savour Luxury Restaurant"
-                  className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105 showcase-img"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
                 <div className="absolute bottom-2.5 right-2.5 left-2.5 flex items-center justify-between text-[11px] text-white">
