@@ -227,7 +227,7 @@ export const WebShowcaseSlider: React.FC = () => {
           </div>
         </div>
 
-        {/* 3D Spatial Carousel Stage: TALL PORTRAIT ASPECT RATIO (No top/left/right borders) */}
+        {/* 3D Spatial Carousel Stage: TALL PORTRAIT ASPECT RATIO (Frameless full-bleed image) */}
         <div className="relative w-full h-[620px] sm:h-[720px] flex items-center justify-center perspective-[1400px] overflow-hidden">
           {showcaseProjects.map((item, index) => {
             const count = showcaseProjects.length;
@@ -269,7 +269,7 @@ export const WebShowcaseSlider: React.FC = () => {
                   loading="eager"
                 />
 
-                {/* Subtle top shade for top buttons */}
+                {/* Subtle top shade for top action buttons */}
                 <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-black/75 via-black/30 to-transparent pointer-events-none z-10"></div>
 
                 {/* Top Action Badges */}
@@ -305,37 +305,52 @@ export const WebShowcaseSlider: React.FC = () => {
                   </div>
                 </div>
 
-                {/* 2. Compact Cinematic Dark Vignette Overlay with Pure White Text */}
+                {/* 2. DEDICATED BACKGROUND GRADIENT LAYER (Strictly Behind the text, not blended with the text!) */}
                 <div 
-                  className="relative z-20 px-4 sm:px-5 pt-8 pb-4 bg-gradient-to-t from-black/98 via-black/85 to-transparent flex flex-col justify-end text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]"
+                  className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-black via-black/90 to-transparent pointer-events-none z-10"
+                />
+
+                {/* 3. PURE SOLID WHITE TEXT LAYER (Crisp, 100% Opaque, High-Contrast) */}
+                <div 
+                  className="relative z-20 px-4 sm:px-5 pb-4 pt-1 flex flex-col justify-end"
                 >
                   {/* Category Pill & Live Metric in one compact line */}
                   <div className="flex items-center justify-between gap-2 mb-1.5">
-                    <span className="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase tracking-wider text-[#40D9E8] bg-black/70 border border-[#40D9E8]/30 backdrop-blur-md shadow-sm">
+                    <span className="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase tracking-wider text-[#40D9E8] bg-black/80 border border-[#40D9E8]/40 shadow-sm">
                       {lang === 'ar' ? item.categoryAr : item.categoryEn}
                     </span>
-                    <span className="text-[10px] font-mono font-bold text-emerald-400 bg-black/70 px-2 py-0.5 rounded-full border border-emerald-500/30 backdrop-blur-md">
+                    <span className="text-[10px] font-mono font-bold text-emerald-400 bg-black/80 px-2 py-0.5 rounded-full border border-emerald-500/40">
                       ⚡ {lang === 'ar' ? item.metricsAr : item.metricsEn}
                     </span>
                   </div>
 
-                  {/* Project Title: Pure Bright White, High-Contrast */}
-                  <h3 className="text-sm sm:text-base font-extrabold leading-snug mb-1 text-white line-clamp-1 drop-shadow-md">
+                  {/* Project Title: 100% Solid Pure White */}
+                  <h3 
+                    className="text-sm sm:text-base font-extrabold leading-snug mb-1 line-clamp-1"
+                    style={{ color: '#FFFFFF', opacity: 1 }}
+                  >
                     {lang === 'ar' ? item.titleAr : item.titleEn}
                   </h3>
 
-                  {/* Compact Description: Pure White for maximum legibility */}
+                  {/* Description: 100% Solid Pure White */}
                   {isCenter && (
-                    <p className="text-[11px] sm:text-xs line-clamp-1 mb-2.5 text-white/95 font-medium leading-relaxed drop-shadow">
+                    <p 
+                      className="text-[11px] sm:text-xs line-clamp-1 mb-2.5 font-medium leading-relaxed"
+                      style={{ color: '#FFFFFF', opacity: 1 }}
+                    >
                       {lang === 'ar' ? item.descAr : item.descEn}
                     </p>
                   )}
 
                   {/* Slim Footer: Tech Tags & Quick Expand Link */}
-                  <div className="flex items-center justify-between gap-2 pt-2 border-t border-white/15 text-[10px]">
+                  <div className="flex items-center justify-between gap-2 pt-2 border-t border-white/20 text-[10px]">
                     <div className="flex flex-wrap gap-1">
                       {item.tags.slice(0, 2).map((tg) => (
-                        <span key={tg} className="px-2 py-0.5 rounded bg-white/10 backdrop-blur-md border border-white/20 text-white font-medium">
+                        <span 
+                          key={tg} 
+                          className="px-2 py-0.5 rounded bg-black/70 border border-white/20 font-medium"
+                          style={{ color: '#FFFFFF' }}
+                        >
                           {tg}
                         </span>
                       ))}
@@ -345,7 +360,8 @@ export const WebShowcaseSlider: React.FC = () => {
                         e.stopPropagation();
                         setModalImage(item.image);
                       }}
-                      className="text-white hover:text-[#40D9E8] font-bold flex items-center gap-1 cursor-pointer transition-colors bg-white/10 hover:bg-white/20 px-2.5 py-1 rounded-full border border-white/20 shrink-0"
+                      className="font-bold flex items-center gap-1 cursor-pointer transition-colors bg-white/15 hover:bg-white/25 px-2.5 py-1 rounded-full border border-white/25 shrink-0"
+                      style={{ color: '#FFFFFF' }}
                     >
                       <span>عرض كامل</span>
                       <span>🔍</span>
