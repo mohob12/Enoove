@@ -238,6 +238,7 @@ export const WebShowcaseSlider: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [modalImage, setModalImage] = useState<string | null>(null);
+  const [modalDevice, setModalDevice] = useState<'desktop' | 'tablet' | 'mobile'>('desktop');
   const [liked, setLiked] = useState<Record<string, boolean>>({});
 
   const nextSlide = () => {
@@ -317,7 +318,7 @@ export const WebShowcaseSlider: React.FC = () => {
           </div>
         </div>
 
-        {/* 3D Spatial Carousel Stage: TALL PORTRAIT ASPECT RATIO (4K Resolution) */}
+        {/* 3D Spatial Carousel Stage: TALL PORTRAIT ASPECT RATIO */}
         <div className="relative w-full h-[640px] sm:h-[740px] flex items-center justify-center perspective-[1400px] overflow-hidden">
           {showcaseProjects.map((item, index) => {
             const count = showcaseProjects.length;
@@ -351,7 +352,7 @@ export const WebShowcaseSlider: React.FC = () => {
                   zIndex,
                 }}
               >
-                {/* 1. Full-Bleed 4K Image: No borders on top, left, or right */}
+                {/* 1. Full-Bleed 4K Image: Natural proportion display */}
                 <img
                   src={item.image}
                   alt={item.titleAr}
@@ -404,7 +405,7 @@ export const WebShowcaseSlider: React.FC = () => {
                 <div 
                   className="relative z-20 px-4 sm:px-5 pb-4 pt-1 flex flex-col justify-end"
                 >
-                  {/* Category Pill & Live Metric in one compact line */}
+                  {/* Category Pill & Live Metric */}
                   <div className="flex items-center justify-between gap-2 mb-1.5">
                     <span className="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase tracking-wider text-[#40D9E8] bg-black/80 border border-[#40D9E8]/40 shadow-sm">
                       {lang === 'ar' ? item.categoryAr : item.categoryEn}
@@ -537,36 +538,109 @@ export const WebShowcaseSlider: React.FC = () => {
 
       </div>
 
-      {/* Full-Page Image Lightbox Modal with Crisp 4K Resolution */}
+      {/* FULL-PAGE 4K LIGHTBOX MODAL WITH DEVICE VIEWPORT CONSTRAINTS (NO STRETCHING) */}
       {modalImage && (
         <div 
-          className="fixed inset-0 z-50 bg-black/92 backdrop-blur-2xl flex flex-col items-center justify-center p-3 sm:p-6 animate-fadeIn"
+          className="fixed inset-0 z-50 bg-black/92 backdrop-blur-2xl flex flex-col items-center justify-center p-2 sm:p-6 animate-fadeIn"
           onClick={() => setModalImage(null)}
         >
           <div 
-            className="relative max-w-5xl w-full max-h-[94vh] bg-[#0c1220] rounded-3xl border border-white/20 overflow-hidden flex flex-col shadow-2xl"
+            className="relative max-w-5xl w-full max-h-[96vh] bg-[#0c1220] rounded-3xl border border-white/20 overflow-hidden flex flex-col shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Modal Header */}
-            <div className="px-6 py-4 border-b border-white/10 flex items-center justify-between bg-black/60">
-              <span className="text-sm font-bold text-white flex items-center gap-2">
-                <span className="text-[#40D9E8]">معاينة الواجهة كاملة بدقة فائقة 4K Ultra-Res</span>
-              </span>
+            {/* Modal Header with Device Viewport Selectors */}
+            <div className="px-5 py-3.5 border-b border-white/10 flex flex-wrap items-center justify-between gap-3 bg-black/70 shrink-0">
+              <div className="flex items-center gap-2">
+                <span className="w-2.5 h-2.5 rounded-full bg-[#27C93F] animate-pulse"></span>
+                <span className="text-xs sm:text-sm font-bold text-white">
+                  معاينة بنسبة العرض الأصلية 4K (بدون تمدد)
+                </span>
+              </div>
+
+              {/* Viewport Width Controls (Desktop vs Tablet vs Mobile proportions) */}
+              <div className="flex items-center gap-1.5 p-1 rounded-xl bg-white/10 border border-white/10 text-xs">
+                <button
+                  onClick={() => setModalDevice('desktop')}
+                  className={`px-3 py-1 rounded-lg font-medium transition-all cursor-pointer ${
+                    modalDevice === 'desktop'
+                      ? 'bg-[#647BFF] text-white shadow-sm'
+                      : 'text-white/70 hover:text-white'
+                  }`}
+                  title="عرض بنسبة شاشة الكمبيوتر"
+                >
+                  💻 حاسوب (740px)
+                </button>
+                <button
+                  onClick={() => setModalDevice('tablet')}
+                  className={`px-3 py-1 rounded-lg font-medium transition-all cursor-pointer ${
+                    modalDevice === 'tablet'
+                      ? 'bg-[#647BFF] text-white shadow-sm'
+                      : 'text-white/70 hover:text-white'
+                  }`}
+                  title="عرض بنسبة شاشة الآيباد"
+                >
+                  📱 تابلت (560px)
+                </button>
+                <button
+                  onClick={() => setModalDevice('mobile')}
+                  className={`px-3 py-1 rounded-lg font-medium transition-all cursor-pointer ${
+                    modalDevice === 'mobile'
+                      ? 'bg-[#647BFF] text-white shadow-sm'
+                      : 'text-white/70 hover:text-white'
+                  }`}
+                  title="عرض بنسبة شاشة الهاتف"
+                >
+                  📲 هاتف (380px)
+                </button>
+              </div>
+
+              {/* Close Button */}
               <button
                 onClick={() => setModalImage(null)}
-                className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white text-sm cursor-pointer"
+                className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white text-sm cursor-pointer transition-colors"
+                title="إغلاق المعاينة"
               >
                 ✕
               </button>
             </div>
 
-            {/* Scrollable Full Landing Page Preview */}
-            <div className="overflow-y-auto max-h-[calc(94vh-70px)] p-4 bg-[#06080F] flex justify-center">
-              <img
-                src={modalImage}
-                alt="Full Landing Page Preview 4K"
-                className="w-full max-w-3xl h-auto rounded-xl shadow-2xl showcase-img"
-              />
+            {/* Scrollable Container with Strict Aspect-Ratio Locking (Zero Stretching) */}
+            <div className="overflow-y-auto max-h-[calc(96vh-65px)] p-4 sm:p-6 bg-[#04060A] flex justify-center items-start">
+              <div 
+                className={`transition-all duration-300 w-full rounded-2xl overflow-hidden shadow-[0_25px_70px_rgba(0,0,0,0.95)] border border-white/15 ${
+                  modalDevice === 'desktop'
+                    ? 'max-w-[760px]'
+                    : modalDevice === 'tablet'
+                      ? 'max-w-[560px]'
+                      : 'max-w-[380px]'
+                }`}
+              >
+                {/* Simulated Safari / macOS Top Window Bar */}
+                <div className="bg-[#101827] px-4 py-2.5 border-b border-white/10 flex items-center justify-between">
+                  <div className="flex items-center gap-1.5">
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#FF5F56]"></span>
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#FFBD2E]"></span>
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#27C93F]"></span>
+                  </div>
+                  <div className="px-3 py-0.5 rounded-full bg-black/40 text-[10px] font-mono text-[#40D9E8] border border-white/5 truncate max-w-[200px]">
+                    https://enoove.4k/preview
+                  </div>
+                  <span className="text-[10px] text-white/50 font-mono">4096px HD</span>
+                </div>
+
+                {/* The Unstretched Natural Aspect-Ratio Image */}
+                <img
+                  src={modalImage}
+                  alt="Full Landing Page Preview 4K"
+                  className="w-full h-auto block select-none bg-black"
+                  style={{
+                    height: 'auto',
+                    maxWidth: '100%',
+                    objectFit: 'contain',
+                    imageRendering: '-webkit-optimize-contrast'
+                  }}
+                />
+              </div>
             </div>
           </div>
         </div>
