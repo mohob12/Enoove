@@ -2,6 +2,7 @@ import React from 'react';
 import { LanguageProvider } from './context/LanguageContext';
 import { ThemeProvider } from './context/ThemeContext';
 import { Navbar } from './components/Navbar';
+import { TopHeroBanner } from './components/TopHeroBanner';
 import { Hero } from './components/Hero';
 import { WebShowcaseSlider } from './components/WebShowcaseSlider';
 import { AiAutomationSection } from './components/AiAutomationSection';
@@ -31,6 +32,7 @@ export const AppContent: React.FC = () => {
 
       {/* Main Experience Flow */}
       <main className="relative z-10">
+        <TopHeroBanner />
         <Hero />
         <WebShowcaseSlider />
         <AiAutomationSection />
