@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
+import { useTheme } from '../context/ThemeContext';
 import { ArrowLeftIcon, ArrowRightIcon, ExpandIcon, HeartIcon } from './Icons';
 
 interface ShowcaseProject {
@@ -69,7 +70,7 @@ const showcaseProjects: ShowcaseProject[] = [
     image: '/showcase/livora-interiors.jpg',
     url: 'livorainteriors.design',
     titleAr: 'Livora Interiors — أثاث راقي وتصميم داخلي معماري',
-    titleEn: 'Livora Interiors — Haute Furniture & Architecture',
+    titleEn: 'Livora Interiors — Haute Architecture & Furniture',
     categoryAr: 'العقارات والتصميم الداخلي',
     categoryEn: 'Real Estate & Interior Architecture',
     descAr: 'استعراض معماري أنيق للأثاث الفاخر والغرف وتنسيقات المنازل مع كتالوج تفاعلي للشراء والتخصيص.',
@@ -143,6 +144,7 @@ const showcaseProjects: ShowcaseProject[] = [
 
 export const WebShowcaseSlider: React.FC = () => {
   const { lang, isRtl } = useLanguage();
+  const { isDark } = useTheme();
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [modalImage, setModalImage] = useState<string | null>(null);
@@ -160,7 +162,6 @@ export const WebShowcaseSlider: React.FC = () => {
     setLiked((prev) => ({ ...prev, [id]: !prev[id] }));
   };
 
-  // Auto-play
   useEffect(() => {
     if (isPaused || modalImage) return;
     const timer = setInterval(() => {
@@ -174,7 +175,7 @@ export const WebShowcaseSlider: React.FC = () => {
   return (
     <section 
       id="services-web" 
-      className="py-24 relative overflow-hidden bg-[#080B14]"
+      className="py-24 relative overflow-hidden"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -203,31 +204,39 @@ export const WebShowcaseSlider: React.FC = () => {
         </div>
 
         {/* Top Browser Simulation Bar (Inspired by Reference Image 02) */}
-        <div className="max-w-2xl mx-auto mb-8 px-5 py-3 rounded-full bg-[#101827]/90 backdrop-blur-2xl border border-white/15 shadow-[0_15px_35px_rgba(0,0,0,0.6)] flex items-center justify-between text-xs text-[#A5B0C2]">
+        <div className={`max-w-2xl mx-auto mb-8 px-5 py-3 rounded-full backdrop-blur-2xl border shadow-lg flex items-center justify-between text-xs transition-colors duration-300 ${
+          isDark 
+            ? 'bg-[#101827]/90 border-white/15 text-[#A5B0C2]' 
+            : 'bg-white/90 border-slate-200 text-slate-700 shadow-slate-200/50'
+        }`}>
           <div className="flex items-center gap-3">
             <div className="flex items-center gap-1.5">
               <span className="w-3 h-3 rounded-full bg-[#FF5F56]/90"></span>
               <span className="w-3 h-3 rounded-full bg-[#FFBD2E]/90"></span>
               <span className="w-3 h-3 rounded-full bg-[#27C93F]/90"></span>
             </div>
-            <span className="text-white/20 hidden sm:inline">|</span>
-            <div className="px-3 py-1 rounded-full bg-black/40 border border-white/5 font-mono text-white text-[11px] flex items-center gap-1.5">
-              <span className="text-[#40D9E8]">🔒 https://</span>
-              <span className="text-[#F8FAFC] font-semibold">{activeProject.url}</span>
+            <span className="opacity-20 hidden sm:inline">|</span>
+            <div className={`px-3 py-1 rounded-full border font-mono text-[11px] flex items-center gap-1.5 ${
+              isDark ? 'bg-black/40 border-white/5 text-white' : 'bg-slate-100 border-slate-200 text-slate-800'
+            }`}>
+              <span className="text-[#0284C7] dark:text-[#40D9E8]">🔒 https://</span>
+              <span className="font-semibold">{activeProject.url}</span>
             </div>
           </div>
           <div className="flex items-center gap-3">
-            <span className="text-[11px] font-mono text-[#40D9E8] font-bold">
+            <span className="text-[11px] font-mono font-bold text-[#0284C7] dark:text-[#40D9E8]">
               {activeIndex + 1} / {showcaseProjects.length}
             </span>
-            <span className="px-3 py-0.5 rounded-full bg-white/10 text-[10px] text-white font-medium">
+            <span className={`px-3 py-0.5 rounded-full text-[10px] font-medium ${
+              isDark ? 'bg-white/10 text-white' : 'bg-slate-100 text-slate-800 border border-slate-200'
+            }`}>
               {lang === 'ar' ? activeProject.categoryAr : activeProject.categoryEn}
             </span>
           </div>
         </div>
 
         {/* 3D Spatial Carousel Stage */}
-        <div className="relative w-full h-[520px] sm:h-[620px] flex items-center justify-center perspective-[1400px] overflow-hidden">
+        <div className="relative w-full h-[540px] sm:h-[640px] flex items-center justify-center perspective-[1400px] overflow-hidden">
           {showcaseProjects.map((item, index) => {
             const count = showcaseProjects.length;
             let offset = (index - activeIndex) % count;
@@ -238,7 +247,6 @@ export const WebShowcaseSlider: React.FC = () => {
             const isLeft = offset < 0;
             const absOffset = Math.abs(offset);
 
-            // True 3D spatial values matching Reference Image 02
             const translateX = offset * 320;
             const translateZ = -absOffset * 180;
             const rotateY = isCenter ? 0 : isLeft ? 28 : -28;
@@ -250,8 +258,10 @@ export const WebShowcaseSlider: React.FC = () => {
               <div
                 key={item.id}
                 onClick={() => setActiveIndex(index)}
-                className={`absolute w-[94%] sm:w-[540px] md:w-[620px] h-[480px] sm:h-[570px] rounded-3xl p-4 sm:p-5 flex flex-col justify-between cursor-pointer transition-all duration-700 ease-out select-none border border-white/20 backdrop-blur-2xl shadow-[0_30px_90px_rgba(0,0,0,0.9)] bg-[#0d1424] ${
-                  isCenter ? 'ring-2 ring-[#40D9E8]/60 shadow-[0_0_50px_rgba(64,217,232,0.25)]' : 'hidden sm:flex'
+                className={`absolute w-[94%] sm:w-[540px] md:w-[620px] h-[500px] sm:h-[600px] rounded-3xl p-4 sm:p-5 flex flex-col justify-between cursor-pointer transition-all duration-700 ease-out select-none border backdrop-blur-2xl shadow-2xl ${
+                  isDark ? 'bg-[#0d1424] border-white/20' : 'bg-white border-slate-200 shadow-slate-200/60'
+                } ${
+                  isCenter ? 'ring-2 ring-[#40D9E8]/60 shadow-[0_20px_60px_rgba(64,217,232,0.25)]' : 'hidden sm:flex'
                 }`}
                 style={{
                   transform: `translateX(${translateX}px) translateZ(${translateZ}px) rotateY(${rotateY}deg) scale(${scale})`,
@@ -260,9 +270,9 @@ export const WebShowcaseSlider: React.FC = () => {
                 }}
               >
                 {/* Browser Frame Top Bar */}
-                <div className="flex items-center justify-between pb-3 border-b border-white/10 shrink-0">
+                <div className="flex items-center justify-between pb-3 border-b border-black/5 dark:border-white/10 shrink-0">
                   <div className="flex items-center gap-2">
-                    <span className="text-xs font-bold text-white tracking-wide uppercase font-mono">
+                    <span className="text-xs font-bold tracking-wide uppercase font-mono text-slate-800 dark:text-white">
                       {item.url}
                     </span>
                   </div>
@@ -272,10 +282,12 @@ export const WebShowcaseSlider: React.FC = () => {
                         e.stopPropagation();
                         toggleLike(item.id);
                       }}
-                      className={`p-1.5 rounded-full border transition-all ${
+                      className={`p-1.5 rounded-full border transition-all cursor-pointer ${
                         liked[item.id]
-                          ? 'bg-red-500/20 border-red-500/40 text-red-400'
-                          : 'bg-white/5 border-white/10 text-white/60 hover:text-white'
+                          ? 'bg-red-500/20 border-red-500/40 text-red-500'
+                          : isDark
+                            ? 'bg-white/5 border-white/10 text-white/60 hover:text-white'
+                            : 'bg-slate-100 border-slate-200 text-slate-600 hover:text-slate-900'
                       }`}
                       title="حفظ في المفضلة"
                     >
@@ -286,7 +298,11 @@ export const WebShowcaseSlider: React.FC = () => {
                         e.stopPropagation();
                         setModalImage(item.image);
                       }}
-                      className="p-1.5 rounded-full bg-white/5 hover:bg-white/15 border border-white/10 text-white/70 hover:text-white transition-colors"
+                      className={`p-1.5 rounded-full border transition-colors cursor-pointer ${
+                        isDark 
+                          ? 'bg-white/5 hover:bg-white/15 border-white/10 text-white/70 hover:text-white' 
+                          : 'bg-slate-100 hover:bg-slate-200 border-slate-200 text-slate-700 hover:text-slate-900'
+                      }`}
                       title="تكبير ومعاينة الواجهة كاملة"
                     >
                       <ExpandIcon size={14} />
@@ -294,9 +310,9 @@ export const WebShowcaseSlider: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Actual Real Website Interface Image Viewport */}
+                {/* High-Resolution Enhanced Website Interface Viewport */}
                 <div 
-                  className="my-3 rounded-2xl border border-white/10 bg-[#06080F] flex-1 overflow-hidden relative group/img shadow-inner"
+                  className="my-3 rounded-2xl border border-black/5 dark:border-white/10 bg-slate-900 flex-1 overflow-hidden relative group/img shadow-inner"
                   onClick={(e) => {
                     if (isCenter) {
                       e.stopPropagation();
@@ -307,20 +323,20 @@ export const WebShowcaseSlider: React.FC = () => {
                   <img
                     src={item.image}
                     alt={item.titleAr}
-                    className="w-full h-full object-cover object-top transition-transform duration-700 group-hover/img:scale-105"
-                    loading="lazy"
+                    className="w-full h-full object-cover object-top showcase-img transition-transform duration-700 group-hover/img:scale-105"
+                    loading="eager"
                   />
 
-                  {/* Gradient Overlay for elegance and legibility */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#080B14] via-transparent to-transparent opacity-80 pointer-events-none"></div>
+                  {/* Gradient Overlay for subtle depth */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent opacity-80 pointer-events-none"></div>
 
                   {/* Overlay badge with KPI metric */}
                   <div className="absolute bottom-3 right-3 left-3 flex items-center justify-between pointer-events-none">
-                    <span className="px-3 py-1 rounded-full text-[11px] font-bold text-white bg-black/75 border border-white/20 backdrop-blur-md">
+                    <span className="px-3 py-1 rounded-full text-[11px] font-bold text-white bg-black/80 border border-white/20 backdrop-blur-md">
                       ⚡ {lang === 'ar' ? item.metricsAr : item.metricsEn}
                     </span>
-                    <span className="px-2.5 py-1 rounded-full text-[10px] font-medium text-[#40D9E8] bg-[#40D9E8]/10 border border-[#40D9E8]/30 backdrop-blur-md">
-                      اضغط للتكبير 🔍
+                    <span className="px-2.5 py-1 rounded-full text-[10px] font-medium text-[#40D9E8] bg-black/80 border border-[#40D9E8]/40 backdrop-blur-md">
+                      اضغط للتكبير بدقة عالية 🔍
                     </span>
                   </div>
                 </div>
@@ -328,24 +344,28 @@ export const WebShowcaseSlider: React.FC = () => {
                 {/* Project Details Footer */}
                 <div className="pt-2 shrink-0">
                   <div className="flex items-center justify-between mb-1.5">
-                    <span className="text-[11px] font-bold text-[#40D9E8] uppercase tracking-wider">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#0284C7] dark:text-[#40D9E8]">
                       {lang === 'ar' ? item.categoryAr : item.categoryEn}
                     </span>
-                    <span className="text-[10px] text-[#A5B0C2]">Enoove Certified Design</span>
+                    <span className="text-[10px] text-slate-500 dark:text-[#A5B0C2]">Enoove Certified Design</span>
                   </div>
-                  <h3 className="text-base sm:text-lg font-bold text-white leading-tight mb-1 truncate">
+                  <h3 className="text-base sm:text-lg font-bold leading-tight mb-1 truncate text-slate-900 dark:text-white">
                     {lang === 'ar' ? item.titleAr : item.titleEn}
                   </h3>
                   
                   {isCenter && (
-                    <p className="text-xs text-[#A5B0C2] line-clamp-1 mb-2">
+                    <p className="text-xs line-clamp-1 mb-2 text-slate-600 dark:text-[#A5B0C2]">
                       {lang === 'ar' ? item.descAr : item.descEn}
                     </p>
                   )}
 
                   <div className="flex flex-wrap gap-1.5">
                     {item.tags.map((tg) => (
-                      <span key={tg} className="px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-[10px] text-white/80">
+                      <span key={tg} className={`px-2 py-0.5 rounded-md border text-[10px] ${
+                        isDark 
+                          ? 'bg-white/5 border-white/10 text-white/80' 
+                          : 'bg-slate-100 border-slate-200 text-slate-700'
+                      }`}>
                         {tg}
                       </span>
                     ))}
@@ -359,11 +379,19 @@ export const WebShowcaseSlider: React.FC = () => {
 
         {/* Floating Controller Pill (Reference Image 02) */}
         <div className="max-w-md mx-auto mt-8 flex flex-col items-center gap-4">
-          <div className="px-5 py-3 rounded-full bg-[#101827]/95 backdrop-blur-2xl border border-white/20 shadow-[0_15px_35px_rgba(0,0,0,0.7)] flex items-center justify-between w-full gap-4">
+          <div className={`px-5 py-3 rounded-full backdrop-blur-2xl border shadow-xl flex items-center justify-between w-full gap-4 transition-colors ${
+            isDark 
+              ? 'bg-[#101827]/95 border-white/20' 
+              : 'bg-white/95 border-slate-200 shadow-slate-200/80'
+          }`}>
             {/* Prev Button */}
             <button
               onClick={prevSlide}
-              className="w-10 h-10 rounded-full bg-white/5 hover:bg-white/15 border border-white/10 flex items-center justify-center text-white transition-all transform hover:scale-105 active:scale-95 cursor-pointer"
+              className={`w-10 h-10 rounded-full border flex items-center justify-center transition-all transform hover:scale-105 active:scale-95 cursor-pointer ${
+                isDark 
+                  ? 'bg-white/5 hover:bg-white/15 border-white/10 text-white' 
+                  : 'bg-slate-100 hover:bg-slate-200 border-slate-200 text-slate-800'
+              }`}
               aria-label="Previous Slide"
             >
               {isRtl ? <ArrowRightIcon size={18} /> : <ArrowLeftIcon size={18} />}
@@ -378,10 +406,10 @@ export const WebShowcaseSlider: React.FC = () => {
                 {activeIndex + 1}
               </div>
               <div className="text-right rtl:text-right ltr:text-left truncate">
-                <h4 className="text-xs sm:text-sm font-bold text-white truncate">
+                <h4 className="text-xs sm:text-sm font-bold truncate text-slate-900 dark:text-white">
                   {(lang === 'ar' ? activeProject.titleAr : activeProject.titleEn).split('—')[0]}
                 </h4>
-                <p className="text-[11px] text-[#A5B0C2] truncate">
+                <p className="text-[11px] truncate text-slate-500 dark:text-[#A5B0C2]">
                   {lang === 'ar' ? activeProject.categoryAr : activeProject.categoryEn}
                 </p>
               </div>
@@ -390,7 +418,11 @@ export const WebShowcaseSlider: React.FC = () => {
             {/* Next Button */}
             <button
               onClick={nextSlide}
-              className="w-10 h-10 rounded-full bg-white/5 hover:bg-white/15 border border-white/10 flex items-center justify-center text-white transition-all transform hover:scale-105 active:scale-95 cursor-pointer"
+              className={`w-10 h-10 rounded-full border flex items-center justify-center transition-all transform hover:scale-105 active:scale-95 cursor-pointer ${
+                isDark 
+                  ? 'bg-white/5 hover:bg-white/15 border-white/10 text-white' 
+                  : 'bg-slate-100 hover:bg-slate-200 border-slate-200 text-slate-800'
+              }`}
               aria-label="Next Slide"
             >
               {isRtl ? <ArrowLeftIcon size={18} /> : <ArrowRightIcon size={18} />}
@@ -405,8 +437,10 @@ export const WebShowcaseSlider: React.FC = () => {
                 onClick={() => setActiveIndex(dotIdx)}
                 className={`transition-all duration-300 rounded-full cursor-pointer ${
                   dotIdx === activeIndex
-                    ? 'w-7 h-2 bg-[#40D9E8]'
-                    : 'w-2 h-2 bg-white/20 hover:bg-white/40'
+                    ? 'w-7 h-2 bg-[#0284C7] dark:bg-[#40D9E8]'
+                    : isDark
+                      ? 'w-2 h-2 bg-white/20 hover:bg-white/40'
+                      : 'w-2 h-2 bg-slate-300 hover:bg-slate-400'
                 }`}
                 aria-label={`Go to slide ${dotIdx + 1}`}
               />
@@ -416,32 +450,35 @@ export const WebShowcaseSlider: React.FC = () => {
 
       </div>
 
-      {/* Full-Page Image Lightbox Modal */}
+      {/* Full-Page Image Lightbox Modal with Crisp High Resolution */}
       {modalImage && (
         <div 
-          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-xl flex flex-col items-center justify-center p-4 sm:p-8 animate-fadeIn"
+          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-2xl flex flex-col items-center justify-center p-3 sm:p-6 animate-fadeIn"
           onClick={() => setModalImage(null)}
         >
-          <div className="relative max-w-4xl w-full max-h-[90vh] bg-[#101827] rounded-3xl border border-white/20 overflow-hidden flex flex-col shadow-2xl">
+          <div 
+            className="relative max-w-5xl w-full max-h-[92vh] bg-[#101827] dark:bg-[#101827] rounded-3xl border border-white/20 overflow-hidden flex flex-col shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
             {/* Modal Header */}
-            <div className="px-6 py-4 border-b border-white/10 flex items-center justify-between bg-black/40">
+            <div className="px-6 py-4 border-b border-white/10 flex items-center justify-between bg-black/50">
               <span className="text-sm font-bold text-white flex items-center gap-2">
-                <span className="text-[#40D9E8]">معاينة الواجهة الكاملة بدقة عالية</span>
+                <span className="text-[#40D9E8]">معاينة الواجهة كاملة بأعلى دقة ووضوح</span>
               </span>
               <button
                 onClick={() => setModalImage(null)}
-                className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white text-sm"
+                className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white text-sm cursor-pointer"
               >
                 ✕
               </button>
             </div>
 
             {/* Scrollable Full Landing Page Preview */}
-            <div className="overflow-y-auto max-h-[calc(90vh-70px)] p-2 bg-black/60">
+            <div className="overflow-y-auto max-h-[calc(92vh-70px)] p-4 bg-[#080B14] flex justify-center">
               <img
                 src={modalImage}
                 alt="Full Landing Page Preview"
-                className="w-full h-auto rounded-xl"
+                className="w-full max-w-3xl h-auto rounded-xl shadow-2xl showcase-img"
               />
             </div>
           </div>

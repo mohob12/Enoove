@@ -10,7 +10,6 @@
   
   --glass-bg: rgba(255, 255, 255, 0.05);
   --glass-bg-hover: rgba(255, 255, 255, 0.09);
-  --glass-bg-active: rgba(255, 255, 255, 0.12);
   --glass-border: rgba(255, 255, 255, 0.12);
   --glass-border-bright: rgba(255, 255, 255, 0.28);
   --glass-inner-glow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.15);
@@ -35,28 +34,29 @@
   --font-en: 'Plus Jakarta Sans', system-ui, sans-serif;
 }
 
-/* Light Theme Variables (Inspired by Reference 01 Ethereal Glassmorphism) */
+/* ==========================================================================
+   LIGHT MODE PALETTE — Frosted Porcelain Glass (Reference Image 01 Inspiration)
+   ========================================================================== */
 html.light,
 html[data-theme="light"] {
   --bg-midnight: #F8FAFC;
   --bg-dark-navy: #FFFFFF;
   --bg-surface: #F1F5F9;
 
-  --glass-bg: rgba(255, 255, 255, 0.75);
-  --glass-bg-hover: rgba(255, 255, 255, 0.9);
-  --glass-bg-active: #FFFFFF;
-  --glass-border: rgba(15, 23, 42, 0.08);
-  --glass-border-bright: rgba(15, 23, 42, 0.18);
-  --glass-inner-glow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.95);
-  --glass-shadow: 0 20px 45px rgba(15, 23, 42, 0.06), 0 1px 3px rgba(15, 23, 42, 0.03);
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-bg-hover: #FFFFFF;
+  --glass-border: rgba(15, 23, 42, 0.09);
+  --glass-border-bright: rgba(79, 70, 229, 0.25);
+  --glass-inner-glow: inset 0 1px 1px 0 rgba(255, 255, 255, 1);
+  --glass-shadow: 0 12px 30px rgba(15, 23, 42, 0.05), 0 1px 3px rgba(15, 23, 42, 0.03);
 
   --accent-electric: #4F46E5;
   --accent-cyan: #0284C7;
   --accent-violet: #7C3AED;
 
   --text-primary: #0F172A;
-  --text-secondary: #475569;
-  --text-muted: #94A3B8;
+  --text-secondary: #334155;
+  --text-muted: #64748B;
 
   color-scheme: light;
 }
@@ -65,7 +65,7 @@ html[data-theme="light"] {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.2s ease;
+  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.15s ease;
 }
 
 html {
@@ -86,7 +86,7 @@ body[dir="ltr"] {
   font-family: var(--font-en);
 }
 
-/* Ambient canvas */
+/* Ambient Canvas Glows */
 .ambient-bg {
   position: fixed;
   inset: 0;
@@ -104,7 +104,8 @@ body[dir="ltr"] {
 }
 
 html.light .ambient-orb {
-  opacity: 0.12;
+  opacity: 0.10;
+  filter: blur(140px);
 }
 
 .ambient-orb-1 {
@@ -147,8 +148,8 @@ html.light .ambient-orb {
 
 html.light .ambient-grid {
   background-image: 
-    linear-gradient(to right, rgba(15, 23, 42, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(15, 23, 42, 0.03) 1px, transparent 1px);
+    linear-gradient(to right, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
 }
 
 @keyframes floatOrb {
@@ -157,7 +158,7 @@ html.light .ambient-grid {
   100% { transform: translateY(-30px) scale(0.95) translateX(-20px); }
 }
 
-/* Glassmorphism Surface Utilities */
+/* Glassmorphism Utilities */
 .glass-panel {
   background: var(--glass-bg);
   backdrop-filter: var(--glass-blur);
@@ -182,7 +183,7 @@ html.light .ambient-grid {
 }
 
 html.light .text-gradient {
-  background: linear-gradient(135deg, #0F172A 0%, #1E293B 40%, var(--accent-electric) 80%, var(--accent-cyan) 100%);
+  background: linear-gradient(135deg, #0F172A 0%, #1E293B 40%, #4F46E5 80%, #0284C7 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -205,7 +206,7 @@ html.light .badge-glow {
   background: rgba(79, 70, 229, 0.08);
   border-color: rgba(79, 70, 229, 0.2);
   color: #4F46E5;
-  box-shadow: 0 4px 15px rgba(79, 70, 229, 0.1);
+  box-shadow: 0 4px 15px rgba(79, 70, 229, 0.08);
 }
 
 /* Buttons */
@@ -215,7 +216,7 @@ html.light .badge-glow {
   justify-content: center;
   gap: 10px;
   padding: 14px 28px;
-  background: linear-gradient(135deg, var(--accent-electric) 0%, #4f46e5 100%);
+  background: linear-gradient(135deg, var(--accent-electric) 0%, #4338CA 100%);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: var(--radius-full);
   color: #FFFFFF !important;
@@ -223,7 +224,7 @@ html.light .badge-glow {
   font-weight: 700;
   text-decoration: none;
   cursor: pointer;
-  box-shadow: 0 10px 25px rgba(100, 123, 255, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 10px 25px rgba(79, 70, 229, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.3);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   overflow: hidden;
@@ -231,7 +232,7 @@ html.light .badge-glow {
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 15px 35px rgba(100, 123, 255, 0.55), inset 0 1px 1px rgba(255, 255, 255, 0.5);
+  box-shadow: 0 15px 35px rgba(79, 70, 229, 0.55), inset 0 1px 1px rgba(255, 255, 255, 0.5);
 }
 
 .btn-secondary {
@@ -250,7 +251,7 @@ html.light .badge-glow {
   font-weight: 600;
   text-decoration: none;
   cursor: pointer;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -260,33 +261,92 @@ html.light .badge-glow {
   transform: translateY(-2px);
 }
 
-/* Light Mode Overrides for Tailwind Utility Classes */
+/* Section Header Styles */
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-cyan);
+  margin-bottom: 12px;
+}
+
+html.light .section-tag {
+  color: #0284C7;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 16px;
+  color: var(--text-primary);
+}
+
+.section-desc {
+  font-size: clamp(1rem, 1.3vw, 1.15rem);
+  color: var(--text-secondary);
+  max-width: 680px;
+  margin: 0 auto 48px auto;
+  line-height: 1.7;
+}
+
+/* High-Quality Image Optimization */
+img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.showcase-img {
+  filter: contrast(1.05) saturate(1.04) brightness(1.01);
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
+}
+
+.showcase-img:hover {
+  filter: contrast(1.08) saturate(1.08) brightness(1.03);
+}
+
+/* ==========================================================================
+   COMPREHENSIVE LIGHT MODE OVERRIDES FOR PERFECT LEGIBILITY & COLOR HARMONY
+   ========================================================================== */
 html.light .bg-\[\#080B14\] {
   background-color: #F8FAFC !important;
 }
 
 html.light .bg-\[\#101827\] {
   background-color: #FFFFFF !important;
+  border-color: rgba(15, 23, 42, 0.09) !important;
 }
 
 html.light .bg-\[\#0d1424\],
 html.light .bg-\[\#0d1220\],
 html.light .bg-\[\#0e1628\],
 html.light .bg-\[\#0b1220\] {
-  background-color: #F1F5F9 !important;
+  background-color: #FFFFFF !important;
+  border-color: rgba(15, 23, 42, 0.09) !important;
 }
 
 html.light .bg-\[\#06080F\] {
-  background-color: #E2E8F0 !important;
+  background-color: #F1F5F9 !important;
+  border-color: rgba(15, 23, 42, 0.09) !important;
 }
 
+/* Card Overlays & Headers */
 html.light .bg-\[\#101827\]\/90,
 html.light .bg-\[\#101827\]\/95,
-html.light .bg-\[\#101827\]\/80 {
-  background-color: rgba(255, 255, 255, 0.92) !important;
-  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08) !important;
+html.light .bg-\[\#101827\]\/80,
+html.light .bg-\[\#101827\]\/70 {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border-color: rgba(15, 23, 42, 0.1) !important;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.06) !important;
 }
 
+/* Text Colors in Light Mode */
 html.light .text-white {
   color: #0F172A !important;
 }
@@ -304,7 +364,19 @@ html.light .text-\[\#A5B0C2\]\/90 {
   color: #64748B !important;
 }
 
-html.light .border-white\/10 {
+html.light .text-white\/90,
+html.light .text-white\/80 {
+  color: #1E293B !important;
+}
+
+html.light .text-white\/60,
+html.light .text-white\/70 {
+  color: #64748B !important;
+}
+
+/* Borders in Light Mode */
+html.light .border-white\/10,
+html.light .border-white\/5 {
   border-color: rgba(15, 23, 42, 0.08) !important;
 }
 
@@ -313,42 +385,63 @@ html.light .border-white\/20 {
   border-color: rgba(15, 23, 42, 0.12) !important;
 }
 
+/* Card Glass Backgrounds */
+html.light .bg-white\/\[0\.02\],
 html.light .bg-white\/\[0\.03\],
 html.light .bg-white\/\[0\.04\],
 html.light .bg-white\/\[0\.05\],
 html.light .bg-white\/\[0\.06\],
 html.light .bg-white\/\[0\.08\] {
-  background-color: rgba(255, 255, 255, 0.85) !important;
-  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.05) !important;
+  background-color: #FFFFFF !important;
+  border-color: rgba(15, 23, 42, 0.09) !important;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04) !important;
 }
 
+/* Dark Pills & Sub-Containers in Light Mode */
+html.light .bg-black\/30,
 html.light .bg-black\/40,
 html.light .bg-black\/50,
 html.light .bg-black\/60,
 html.light .bg-black\/75 {
-  background-color: rgba(241, 245, 249, 0.9) !important;
+  background-color: #F1F5F9 !important;
+  color: #0F172A !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+html.light .bg-white\/5,
+html.light .bg-white\/10 {
+  background-color: rgba(15, 23, 42, 0.04) !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
   color: #0F172A !important;
 }
 
-html.light .bg-white\/5 {
-  background-color: rgba(15, 23, 42, 0.04) !important;
-}
-
-html.light .bg-white\/10 {
-  background-color: rgba(15, 23, 42, 0.06) !important;
-}
-
+/* Input Fields and Selects in Light Mode */
 html.light input,
 html.light select,
 html.light textarea {
   background-color: #FFFFFF !important;
   color: #0F172A !important;
-  border-color: rgba(15, 23, 42, 0.15) !important;
+  border-color: rgba(15, 23, 42, 0.16) !important;
 }
 
 html.light input::placeholder,
 html.light textarea::placeholder {
   color: #94A3B8 !important;
+}
+
+/* Hero Section and 3D Card Adjustments in Light Mode */
+html.light .ring-2.ring-\[\#40D9E8\]\/60 {
+  box-shadow: 0 20px 50px rgba(2, 132, 199, 0.15), 0 0 0 2px rgba(2, 132, 199, 0.4) !important;
+}
+
+/* Buttons and Links that MUST remain white in Light Mode */
+html.light .btn-primary,
+html.light .btn-primary * {
+  color: #FFFFFF !important;
+}
+
+html.light .bg-gradient-to-r.from-\[\#647BFF\] * {
+  color: #FFFFFF !important;
 }
 
 /* Container */
