@@ -7,6 +7,7 @@ import { WebShowcaseSlider } from './components/WebShowcaseSlider';
 import { AiAutomationSection } from './components/AiAutomationSection';
 import { BusinessSystemsSection } from './components/BusinessSystemsSection';
 import { CreativeDesignSection } from './components/CreativeDesignSection';
+import { MasterpieceBanner } from './components/MasterpieceBanner';
 import { ProcessTimeline } from './components/ProcessTimeline';
 import { WhyChooseUs } from './components/WhyChooseUs';
 import { PortfolioSection } from './components/PortfolioSection';
@@ -35,6 +36,7 @@ export const AppContent: React.FC = () => {
         <AiAutomationSection />
         <CreativeDesignSection />
         <BusinessSystemsSection />
+        <MasterpieceBanner />
         <ProcessTimeline />
         <WhyChooseUs />
         <PortfolioSection />
