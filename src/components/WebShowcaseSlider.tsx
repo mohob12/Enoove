@@ -266,7 +266,7 @@ export const WebShowcaseSlider: React.FC = () => {
   return (
     <section 
       id="services-web" 
-      className="py-24 relative overflow-hidden"
+      className="pt-2 sm:pt-4 pb-20 sm:pb-24 relative overflow-hidden"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >

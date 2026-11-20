@@ -6,7 +6,7 @@ export const Hero: React.FC = () => {
   const { t, isRtl } = useLanguage();
 
   return (
-    <section className="relative min-h-[85vh] pt-12 sm:pt-16 pb-24 flex flex-col justify-center items-center overflow-hidden">
+    <section className="relative pt-6 sm:pt-10 pb-4 sm:pb-6 flex flex-col justify-center items-center overflow-hidden">
       {/* Background Decorative Radial Glows */}
       <div className="ambient-orb ambient-orb-1"></div>
       <div className="ambient-orb ambient-orb-2"></div>
