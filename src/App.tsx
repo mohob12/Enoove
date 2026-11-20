@@ -1,5 +1,6 @@
 import React from 'react';
 import { LanguageProvider } from './context/LanguageContext';
+import { ThemeProvider } from './context/ThemeContext';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { WebShowcaseSlider } from './components/WebShowcaseSlider';
@@ -15,7 +16,7 @@ import { Footer } from './components/Footer';
 
 export const AppContent: React.FC = () => {
   return (
-    <div className="relative min-h-screen bg-[#080B14] text-[#F8FAFC]">
+    <div className="relative min-h-screen transition-colors duration-500 overflow-x-hidden">
       {/* Background Ambient Grid & Glow Canvas */}
       <div className="ambient-grid"></div>
       <div className="ambient-bg">
@@ -49,9 +50,11 @@ export const AppContent: React.FC = () => {
 
 export const App: React.FC = () => {
   return (
-    <LanguageProvider>
-      <AppContent />
-    </LanguageProvider>
+    <ThemeProvider>
+      <LanguageProvider>
+        <AppContent />
+      </LanguageProvider>
+    </ThemeProvider>
   );
 };
 
