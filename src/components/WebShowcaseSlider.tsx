@@ -24,11 +24,11 @@ const showcaseProjects: ShowcaseProject[] = [
     id: 'maison-savour',
     image: '/showcase/maison-savour.jpg',
     url: 'maisonsavour.gourmet',
-    titleAr: 'Maison Savour — مطعم فاخر وتجربة ضيافة استثنائية',
+    titleAr: 'Maison Savour — مطعم فاخر وتجربة ضيافة ملكية',
     titleEn: 'Maison Savour — Fine Dining & Gastronomy Experience',
     categoryAr: 'المطاعم والكافيهات الفاخرة',
     categoryEn: 'Luxury Dining & Gastronomy',
-    descAr: 'تصميم داكن أنيق يبرز الأطباق بجودة سينمائية مع نظام حجز طاولات تفاعلي وقائمة طعام رقمية 4K.',
+    descAr: 'تصميم داكن أنيق يبرز الأطباق بجودة سينمائية مع نظام حجز طاولات تفاعلي.',
     descEn: 'Cinematic dark UI showcasing Michelin-standard dishes with an intelligent table reservation engine.',
     tags: ['Next.js 15', 'Interactive Menu', 'Table Booking API', 'Apple Pay'],
     metricsAr: '+210% زيادة الحجوزات المباشرة',
@@ -43,7 +43,7 @@ const showcaseProjects: ShowcaseProject[] = [
     titleEn: 'Astra Dent — High-Tech Dental & Medical Clinic',
     categoryAr: 'العيادات والمراكز الطبية',
     categoryEn: 'Medical & Dental Healthcare',
-    descAr: 'واجهة طبية ناصعة وموثوقة مع ملفات الأطباء، وحجز مواعيد فوري في 30 ثانية مع تأكيد آلي عبر واتساب.',
+    descAr: 'واجهة طبية ناصعة وموثوقة مع ملفات الأطباء، وحجز مواعيد فوري في 30 ثانية.',
     descEn: 'Pristine healthcare interface featuring doctor profiles and instant 30s appointment scheduling.',
     tags: ['HIPAA Certified', 'Instant Booking', 'WhatsApp Sync', 'Patient Portal'],
     metricsAr: '99.8% التزام بالمواعيد',
@@ -58,8 +58,8 @@ const showcaseProjects: ShowcaseProject[] = [
     titleEn: 'AHEAD — Curated Luxury Travel & Expeditions',
     categoryAr: 'السياحة والسفر الدولي',
     categoryEn: 'Luxury Travel & Expeditions',
-    descAr: 'تصميم تفاعلي غامر مستوحى من نافذة الطائرة، يستعرض الوجهات العالمية وباقات السفر مع حجز فوري.',
-    descEn: 'Immersive airplane-window inspired UI curating unforgettable global destinations and custom packages.',
+    descAr: 'تصميم تفاعلي غامر مستوحى من نافذة الطائرة، يستعرض الوجهات العالمية.',
+    descEn: 'Immersive airplane-window inspired UI curating unforgettable global destinations.',
     tags: ['Interactive 3D Maps', 'Custom Itineraries', 'Multi-Currency', 'Live Weather'],
     metricsAr: '+320% نمو مبيعات الباقات',
     metricsEn: '+320% Package Sales Growth',
@@ -73,7 +73,7 @@ const showcaseProjects: ShowcaseProject[] = [
     titleEn: 'Livora Interiors — Haute Architecture & Furniture',
     categoryAr: 'العقارات والتصميم الداخلي',
     categoryEn: 'Real Estate & Interior Architecture',
-    descAr: 'استعراض معماري أنيق للأثاث الفاخر والغرف وتنسيقات المنازل مع كتالوج تفاعلي للشراء والتخصيص.',
+    descAr: 'استعراض معماري أنيق للأثاث الفاخر والغرف وتنسيقات المنازل مع كتالوج تفاعلي.',
     descEn: 'Architectural aesthetic showcasing curated designer furniture and luxury living spaces.',
     tags: ['3D Room Configurator', 'E-commerce Engine', 'Bespoke Inquiries'],
     metricsAr: 'مبيعات +1.8M$ في أول 3 أشهر',
@@ -88,8 +88,8 @@ const showcaseProjects: ShowcaseProject[] = [
     titleEn: 'Royal Crest — 5-Star Hotel & Presidential Suites',
     categoryAr: 'الفنادق والمنتجعات',
     categoryEn: 'Hotels & Luxury Resorts',
-    descAr: 'أجواء ذهبية ملكية وفخامة داكنة لاستعراض الأجنحة، المرافق والسبا، مع محرك حجز غرف فوري.',
-    descEn: 'Regal obsidian and gold aesthetic showcasing presidential suites, spa, and instant availability engine.',
+    descAr: 'أجواء ذهبية ملكية وفخامة داكنة لاستعراض الأجنحة، المرافق والسبا.',
+    descEn: 'Regal obsidian and gold aesthetic showcasing presidential suites, spa, and booking.',
     tags: ['Real-time PMS Sync', 'Virtual Room Tour', 'VIP Concierge'],
     metricsAr: '98% نسبة إشغال الغرف',
     metricsEn: '98% Average Occupancy Rate',
@@ -103,7 +103,7 @@ const showcaseProjects: ShowcaseProject[] = [
     titleEn: 'CAKÉ — Haute Confectionery & Gourmet E-Commerce',
     categoryAr: 'التجارة الإلكترونية الفاخرة',
     categoryEn: 'Luxury Gourmet E-Commerce',
-    descAr: 'كتالوج تفاعلي 360° لاختيار كيك المناسبات حسب المزاج والمكونات مع تجربة شراء ودفع فائقة السلاسة.',
+    descAr: 'كتالوج تفاعلي 360° لاختيار كيك المناسبات حسب المزاج والمكونات.',
     descEn: '360° interactive product catalog allowing mood-based customization with frictionless checkout.',
     tags: ['Headless Shopify', 'Custom Cake Builder', 'Same-Day Dispatch'],
     metricsAr: '+180% معدل تحويل السلة',
@@ -118,7 +118,7 @@ const showcaseProjects: ShowcaseProject[] = [
     titleEn: 'Travel Around The World — Global Booking Portal',
     categoryAr: 'بوابات الحجز الإلكتروني',
     categoryEn: 'Online Travel Agency (OTA)',
-    descAr: 'محرك بحث متطور للطيران والفنادق، باقات سفر شائعة، وعروض حصرية بتجربة استخدام نظيفة وعصرية.',
+    descAr: 'محرك بحث متطور للطيران والفنادق، باقات سفر شائعة، وعروض حصرية.',
     descEn: 'Comprehensive flight & hotel search engine with clean UI and curated worldwide deals.',
     tags: ['GDS Flight API', 'Dynamic Packaging', 'Instant Confirmation'],
     metricsAr: '45,000+ تذكرة شهرياً',
@@ -133,7 +133,7 @@ const showcaseProjects: ShowcaseProject[] = [
     titleEn: 'Ticket Plan — Curated Tours & Global Destinations',
     categoryAr: 'تنظيم الرحلات الدولية',
     categoryEn: 'Global Tours & Itineraries',
-    descAr: 'استعراض أجمل الوجهات السياحية العالمية (إيطاليا، فرنسا، تركيا، كندا) مع عروض سياحية مخصصة.',
+    descAr: 'استعراض أجمل الوجهات السياحية العالمية مع عروض سياحية مخصصة.',
     descEn: 'Dynamic destination guide highlighting global landmarks with tailor-made tour itineraries.',
     tags: ['Destination Guides', 'Group Tours', 'Mobile App Sync'],
     metricsAr: 'تقييم 4.9/5 من 12,000 مسافر',
@@ -204,7 +204,7 @@ export const WebShowcaseSlider: React.FC = () => {
         </div>
 
         {/* Minimalist Top Indicator Pill */}
-        <div className={`max-w-xl mx-auto mb-10 px-5 py-2.5 rounded-full backdrop-blur-2xl border shadow-lg flex items-center justify-between text-xs transition-colors duration-300 ${
+        <div className={`max-w-xl mx-auto mb-10 px-5 py-2 rounded-full backdrop-blur-2xl border shadow-lg flex items-center justify-between text-xs transition-colors duration-300 ${
           isDark 
             ? 'bg-[#101827]/85 border-white/15 text-[#A5B0C2]' 
             : 'bg-white/85 border-slate-200 text-slate-700 shadow-slate-200/50'
@@ -239,7 +239,6 @@ export const WebShowcaseSlider: React.FC = () => {
             const isLeft = offset < 0;
             const absOffset = Math.abs(offset);
 
-            // Spatial positioning for tall portrait cards
             const translateX = offset * 340;
             const translateZ = -absOffset * 190;
             const rotateY = isCenter ? 0 : isLeft ? 26 : -26;
@@ -270,12 +269,12 @@ export const WebShowcaseSlider: React.FC = () => {
                   loading="eager"
                 />
 
-                {/* Subtle top shade for action buttons */}
-                <div className="absolute top-0 left-0 right-0 h-28 bg-gradient-to-b from-black/70 to-transparent pointer-events-none z-10"></div>
+                {/* Subtle top shade for top buttons */}
+                <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-black/75 via-black/30 to-transparent pointer-events-none z-10"></div>
 
-                {/* 2. Top Minimalist Floating Action Badges */}
+                {/* Top Action Badges */}
                 <div className="absolute top-4 right-4 left-4 flex items-center justify-between z-20">
-                  <div className="px-3 py-1 rounded-full text-[10px] font-mono font-bold text-white bg-black/50 backdrop-blur-md border border-white/15">
+                  <div className="px-3 py-1 rounded-full text-[10px] font-mono font-bold text-white bg-black/60 backdrop-blur-md border border-white/20 shadow-md">
                     {item.url}
                   </div>
                   <div className="flex items-center gap-2">
@@ -286,8 +285,8 @@ export const WebShowcaseSlider: React.FC = () => {
                       }}
                       className={`p-2 rounded-full backdrop-blur-md border transition-all cursor-pointer ${
                         liked[item.id]
-                          ? 'bg-red-500/30 border-red-500/60 text-red-400'
-                          : 'bg-black/40 border-white/20 text-white/80 hover:text-white'
+                          ? 'bg-red-500/40 border-red-500/70 text-red-300'
+                          : 'bg-black/50 border-white/25 text-white hover:text-red-400'
                       }`}
                       title="حفظ في المفضلة"
                     >
@@ -298,7 +297,7 @@ export const WebShowcaseSlider: React.FC = () => {
                         e.stopPropagation();
                         setModalImage(item.image);
                       }}
-                      className="p-2 rounded-full bg-black/40 hover:bg-black/60 backdrop-blur-md border border-white/20 text-white transition-colors cursor-pointer"
+                      className="p-2 rounded-full bg-black/50 hover:bg-black/70 backdrop-blur-md border border-white/25 text-white transition-colors cursor-pointer"
                       title="معاينة الواجهة كاملة بدقة عالية"
                     >
                       <ExpandIcon size={14} />
@@ -306,41 +305,47 @@ export const WebShowcaseSlider: React.FC = () => {
                   </div>
                 </div>
 
-                {/* 3. Bottom-Only Translucent Luxury Frosted Glass Overlay */}
+                {/* 2. Compact Cinematic Dark Vignette Overlay with Pure White Text */}
                 <div 
-                  className={`relative z-20 p-5 sm:p-6 backdrop-blur-2xl border-t transition-colors duration-300 ${
-                    isDark 
-                      ? 'bg-gradient-to-t from-[#080B14]/98 via-[#080B14]/85 to-[#080B14]/40 border-white/15 text-white' 
-                      : 'bg-gradient-to-t from-white/98 via-white/90 to-white/60 border-slate-200/80 text-slate-900 shadow-lg'
-                  }`}
+                  className="relative z-20 px-4 sm:px-5 pt-8 pb-4 bg-gradient-to-t from-black/98 via-black/85 to-transparent flex flex-col justify-end text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]"
                 >
-                  <div className="flex items-center justify-between mb-1.5">
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#0284C7] dark:text-[#40D9E8]">
+                  {/* Category Pill & Live Metric in one compact line */}
+                  <div className="flex items-center justify-between gap-2 mb-1.5">
+                    <span className="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase tracking-wider text-[#40D9E8] bg-black/70 border border-[#40D9E8]/30 backdrop-blur-md shadow-sm">
                       {lang === 'ar' ? item.categoryAr : item.categoryEn}
                     </span>
-                    <span className="text-[10px] font-semibold text-slate-500 dark:text-[#A5B0C2]">Enoove Certified</span>
+                    <span className="text-[10px] font-mono font-bold text-emerald-400 bg-black/70 px-2 py-0.5 rounded-full border border-emerald-500/30 backdrop-blur-md">
+                      ⚡ {lang === 'ar' ? item.metricsAr : item.metricsEn}
+                    </span>
                   </div>
 
-                  <h3 className="text-base sm:text-lg font-bold leading-tight mb-2 text-slate-900 dark:text-white line-clamp-1">
+                  {/* Project Title: Pure Bright White, High-Contrast */}
+                  <h3 className="text-sm sm:text-base font-extrabold leading-snug mb-1 text-white line-clamp-1 drop-shadow-md">
                     {lang === 'ar' ? item.titleAr : item.titleEn}
                   </h3>
 
+                  {/* Compact Description: Pure White for maximum legibility */}
                   {isCenter && (
-                    <p className="text-xs line-clamp-2 mb-3 leading-relaxed text-slate-600 dark:text-[#A5B0C2]">
+                    <p className="text-[11px] sm:text-xs line-clamp-1 mb-2.5 text-white/95 font-medium leading-relaxed drop-shadow">
                       {lang === 'ar' ? item.descAr : item.descEn}
                     </p>
                   )}
 
-                  <div className="flex items-center justify-between gap-2 pt-2 border-t border-black/5 dark:border-white/10">
-                    <div className="px-2.5 py-1 rounded-lg text-[10px] font-mono font-semibold bg-black/10 dark:bg-black/50 text-[#0284C7] dark:text-[#40D9E8] border border-black/5 dark:border-white/10 truncate">
-                      ⚡ {lang === 'ar' ? item.metricsAr : item.metricsEn}
+                  {/* Slim Footer: Tech Tags & Quick Expand Link */}
+                  <div className="flex items-center justify-between gap-2 pt-2 border-t border-white/15 text-[10px]">
+                    <div className="flex flex-wrap gap-1">
+                      {item.tags.slice(0, 2).map((tg) => (
+                        <span key={tg} className="px-2 py-0.5 rounded bg-white/10 backdrop-blur-md border border-white/20 text-white font-medium">
+                          {tg}
+                        </span>
+                      ))}
                     </div>
                     <button
                       onClick={(e) => {
                         e.stopPropagation();
                         setModalImage(item.image);
                       }}
-                      className="text-[11px] font-bold text-slate-900 dark:text-white hover:underline flex items-center gap-1 cursor-pointer shrink-0"
+                      className="text-white hover:text-[#40D9E8] font-bold flex items-center gap-1 cursor-pointer transition-colors bg-white/10 hover:bg-white/20 px-2.5 py-1 rounded-full border border-white/20 shrink-0"
                     >
                       <span>عرض كامل</span>
                       <span>🔍</span>
