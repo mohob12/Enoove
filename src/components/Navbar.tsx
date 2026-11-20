@@ -21,8 +21,8 @@ export const Navbar: React.FC = () => {
   const navLinks = [
     { href: '#services-web', label: t('nav.showcase') },
     { href: '#services-ai', label: t('nav.ai') },
-    { href: '#services-systems', label: t('nav.systems') },
     { href: '#services-creative', label: t('nav.branding') },
+    { href: '#services-systems', label: t('nav.systems') },
     { href: '#process', label: t('nav.process') },
     { href: '#why-us', label: t('nav.whyUs') },
     { href: '#portfolio', label: t('nav.portfolio') },

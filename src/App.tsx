@@ -33,8 +33,8 @@ export const AppContent: React.FC = () => {
         <Hero />
         <WebShowcaseSlider />
         <AiAutomationSection />
-        <BusinessSystemsSection />
         <CreativeDesignSection />
+        <BusinessSystemsSection />
         <ProcessTimeline />
         <WhyChooseUs />
         <PortfolioSection />

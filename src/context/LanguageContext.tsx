@@ -70,23 +70,23 @@ const translations: Record<Language, Record<string, string>> = {
     'services.ai.sim.step4': 'إرسال تنبيه للمبيعات وتحديث لوحة التحكم',
     'services.ai.sim.btn': 'تشغيل دورة المحاكاة الذكية',
 
-    // Service 03 - Business Systems
-    'services.systems.tag': 'الخدمة 03 — الإدارة والتحكم',
-    'services.systems.title': 'الأنظمة المحاسبية والتنظيمية',
-    'services.systems.desc': 'نطور حلولاً رقمية سحابية تساعدك على إدارة أعمالك بكفاءة، ومراقبة عملياتك، وتنظيم مواردك وأرباحك من مكان واحد متكامل.',
-    'services.systems.kpi.revenue': 'إجمالي الإيرادات',
-    'services.systems.kpi.invoices': 'الفواتير المدفوعة',
-    'services.systems.kpi.inventory': 'دقة المخزون',
-    'services.systems.kpi.efficiency': 'كفاءة التشغيل',
-
-    // Service 04 - Creative Design
-    'services.creative.tag': 'الخدمة 04 — الهوية والابتكار',
+    // Service 03 - Creative Design & Visual Identity
+    'services.creative.tag': 'الخدمة 03 — الهوية والابتكار',
     'services.creative.title': 'التصميم الإبداعي والهوية البصرية',
     'services.creative.desc': 'نبني هويات بصرية مميزة ونصمم أعمالاً إبداعية تمنح علامتك التجارية حضوراً قوياً ولا يُنسى في أذهان العملاء.',
     'services.creative.f1': 'تصميم الشعارات والهويات البصرية الكاملة',
     'services.creative.f2': 'تصاميم السوشيال ميديا والحملات الإعلانية',
     'services.creative.f3': 'تصميم واجهات المتاجر واللوحات والديكور الداخلي',
     'services.creative.f4': 'تغليف المنتجات والكتالوجات الراقية',
+
+    // Service 04 - Business Systems
+    'services.systems.tag': 'الخدمة 04 — الأنظمة السحابية والإدارة',
+    'services.systems.title': 'الأنظمة المحاسبية والتنظيمية',
+    'services.systems.desc': 'نطور حلولاً رقمية سحابية تساعدك على إدارة أعمالك بكفاءة، ومراقبة عملياتك، وتنظيم مواردك وأرباحك من مكان واحد متكامل.',
+    'services.systems.kpi.revenue': 'إجمالي الإيرادات',
+    'services.systems.kpi.invoices': 'الفواتير المدفوعة',
+    'services.systems.kpi.inventory': 'دقة المخزون',
+    'services.systems.kpi.efficiency': 'كفاءة التشغيل',
 
     // Process
     'process.tag': 'منهجية العمل',
@@ -221,23 +221,23 @@ const translations: Record<Language, Record<string, string>> = {
     'services.ai.sim.step4': 'Sales team notified and CRM updated in real-time',
     'services.ai.sim.btn': 'Trigger Intelligent Workflow Demo',
 
-    // Service 03 - Business Systems
-    'services.systems.tag': 'Service 03 — Operations & Control',
-    'services.systems.title': 'Business Management & Accounting Systems',
-    'services.systems.desc': 'We architect cloud enterprise software that unifies your sales, accounting, inventory, and analytics in one cohesive cockpit.',
-    'services.systems.kpi.revenue': 'Gross Revenue',
-    'services.systems.kpi.invoices': 'Settled Invoices',
-    'services.systems.kpi.inventory': 'Inventory Precision',
-    'services.systems.kpi.efficiency': 'Operational Efficiency',
-
-    // Service 04 - Creative Design
-    'services.creative.tag': 'Service 04 — Identity & Aesthetics',
+    // Service 03 - Creative Design
+    'services.creative.tag': 'Service 03 — Identity & Aesthetics',
     'services.creative.title': 'Creative Design & Visual Identity',
     'services.creative.desc': 'We forge unforgettable brand identities and captivating visual narratives that command authority and inspire loyalty.',
     'services.creative.f1': 'Brand strategy, iconic logo design & guidelines',
     'services.creative.f2': 'High-converting social campaigns & 3D motion',
     'services.creative.f3': 'Storefront facades, signage & spatial architectural aesthetics',
     'services.creative.f4': 'Luxury packaging & editorial publications',
+
+    // Service 04 - Business Systems
+    'services.systems.tag': 'Service 04 — Operations & Control',
+    'services.systems.title': 'Business Management & Accounting Systems',
+    'services.systems.desc': 'We architect cloud enterprise software that unifies your sales, accounting, inventory, and analytics in one cohesive cockpit.',
+    'services.systems.kpi.revenue': 'Gross Revenue',
+    'services.systems.kpi.invoices': 'Settled Invoices',
+    'services.systems.kpi.inventory': 'Inventory Precision',
+    'services.systems.kpi.efficiency': 'Operational Efficiency',
 
     // Process
     'process.tag': 'Methodology',
