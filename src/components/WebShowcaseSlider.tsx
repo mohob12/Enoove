@@ -363,11 +363,8 @@ export const WebShowcaseSlider: React.FC = () => {
                 {/* Subtle top shade for top action buttons */}
                 <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-black/75 via-black/30 to-transparent pointer-events-none z-10"></div>
 
-                {/* Top Action Badges */}
-                <div className="absolute top-4 right-4 left-4 flex items-center justify-between z-20">
-                  <div className="px-3 py-1 rounded-full text-[10px] font-mono font-bold text-white bg-black/60 backdrop-blur-md border border-white/20 shadow-md">
-                    {item.url}
-                  </div>
+                {/* Top Action Buttons (Clean & Minimalist without text) */}
+                <div className="absolute top-4 right-4 left-4 flex items-center justify-end z-20">
                   <div className="flex items-center gap-2">
                     <button
                       onClick={(e) => {
