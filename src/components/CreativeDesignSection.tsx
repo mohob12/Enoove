@@ -454,13 +454,16 @@ const CategorySlider: React.FC<CategorySliderProps> = ({
               onClick={() => onSelectWork(work)}
               className="w-[300px] sm:w-[360px] md:w-[410px] lg:w-[440px] flex-shrink-0 snap-start group flex flex-col transition-all duration-500 hover:-translate-y-2 cursor-pointer select-none"
             >
-              {/* 1. Borderless Image Showcase Card (No hard strokes or borders) */}
-              <div className="relative w-full rounded-3xl overflow-hidden shadow-[0_22px_55px_rgba(0,0,0,0.65)] bg-[#0d1424]">
-                {/* 100% Borderless Crisp Image */}
+              {/* 1. Borderless Image Showcase Card — Uniform Window matching the smallest image (735x656) */}
+              <div 
+                className="relative w-full aspect-[735/656] rounded-3xl overflow-hidden shadow-[0_22px_55px_rgba(0,0,0,0.65)] bg-[#0d1424]"
+                style={{ aspectRatio: '735 / 656' }}
+              >
+                {/* 100% Crisp Image fitted seamlessly into uniform window */}
                 <img
                   src={work.image}
                   alt={lang === 'ar' ? work.titleAr : work.titleEn}
-                  className="w-full h-auto object-cover object-top border-0 transition-transform duration-700 ease-out group-hover:scale-105"
+                  className="w-full h-full object-cover object-top border-0 transition-transform duration-700 ease-out group-hover:scale-105"
                   loading="lazy"
                   decoding="async"
                 />
@@ -496,22 +499,26 @@ const CategorySlider: React.FC<CategorySliderProps> = ({
                       <HeartIcon size={14} className={isLiked ? 'fill-current' : ''} />
                     </button>
 
+                    {/* Expand Full Content Button (الزر في أعلى اليسار لعرض كامل المحتوى) */}
                     <button
                       type="button"
                       onClick={(e) => {
                         e.stopPropagation();
                         onSelectWork(work);
                       }}
-                      className="p-2 rounded-full bg-black/50 hover:bg-black/75 backdrop-blur-md border border-white/20 text-white transition-all cursor-pointer"
-                      title={lang === 'ar' ? 'معاينة بحجم كامل' : 'View Full Image'}
+                      className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-black/60 hover:bg-[#40D9E8] text-white hover:text-black backdrop-blur-md border border-white/25 hover:border-[#40D9E8] shadow-lg transition-all transform hover:scale-105 active:scale-95 cursor-pointer"
+                      title={lang === 'ar' ? 'عرض كامل التصميم بدقة عالية' : 'View Full Image'}
                     >
                       <ExpandIcon size={14} />
+                      <span className="text-[10px] font-bold">
+                        {lang === 'ar' ? 'عرض كامل' : 'Expand'}
+                      </span>
                     </button>
                   </div>
                 </div>
               </div>
 
-              {/* 2. Spacious Card Info (Generous spacing, crisp white text) */}
+              {/* 2. Spacious Card Info (Generous spacing, crisp white text, aligned height) */}
               <div className="pt-4 pb-2 px-1 flex flex-col flex-grow">
                 {/* Tag & Sub-category */}
                 <div className="flex items-center justify-between gap-2 mb-2 text-xs">
@@ -527,7 +534,7 @@ const CategorySlider: React.FC<CategorySliderProps> = ({
                 </div>
 
                 {/* Title */}
-                <h4 className="text-base sm:text-lg font-bold text-white group-hover:text-[#40D9E8] transition-colors leading-snug line-clamp-2">
+                <h4 className="text-base sm:text-lg font-bold text-white group-hover:text-[#40D9E8] transition-colors leading-snug line-clamp-2 min-h-[3rem]">
                   {lang === 'ar' ? work.titleAr : work.titleEn}
                 </h4>
               </div>
