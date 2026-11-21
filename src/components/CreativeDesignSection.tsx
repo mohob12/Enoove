@@ -533,21 +533,9 @@ const CategorySlider: React.FC<CategorySliderProps> = ({
                 </div>
 
                 {/* Title */}
-                <h4 className="text-base sm:text-lg font-bold text-white group-hover:text-[#40D9E8] transition-colors leading-snug mb-3 line-clamp-2">
+                <h4 className="text-base sm:text-lg font-bold text-white group-hover:text-[#40D9E8] transition-colors leading-snug line-clamp-2">
                   {lang === 'ar' ? work.titleAr : work.titleEn}
                 </h4>
-
-                {/* Deliverables Tags */}
-                <div className="flex flex-wrap gap-1.5 mt-auto pt-1">
-                  {(lang === 'ar' ? work.deliverablesAr : work.deliverablesEn).map((del, idx) => (
-                    <span
-                      key={idx}
-                      className="px-2.5 py-1 rounded-lg text-[11px] font-medium text-white/70 bg-white/5 border border-white/10"
-                    >
-                      {del}
-                    </span>
-                  ))}
-                </div>
               </div>
             </div>
           );
