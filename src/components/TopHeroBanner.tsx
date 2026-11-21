@@ -80,6 +80,8 @@ export const TopHeroBanner: React.FC = () => {
             alt="Enoove — حلول رقمية ذكية"
             className="w-full h-full object-cover object-center border-0 rounded-none block m-0 p-0"
             loading="eager"
+            decoding="async"
+            fetchPriority="high"
           />
         </a>
 

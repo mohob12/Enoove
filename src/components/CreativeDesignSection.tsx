@@ -329,8 +329,6 @@ const CategorySlider: React.FC<CategorySliderProps> = ({
   onToggleLike
 }) => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(true);
   const [scrollProgress, setScrollProgress] = useState(0);
 
   const checkScroll = () => {
@@ -340,8 +338,6 @@ const CategorySlider: React.FC<CategorySliderProps> = ({
     // In RTL or LTR support
     const maxScroll = scrollWidth - clientWidth;
     if (maxScroll <= 0) {
-      setCanScrollLeft(false);
-      setCanScrollRight(false);
       setScrollProgress(100);
       return;
     }
@@ -349,9 +345,6 @@ const CategorySlider: React.FC<CategorySliderProps> = ({
     const currentScroll = Math.abs(scrollLeft);
     const progress = Math.min(100, Math.max(0, (currentScroll / maxScroll) * 100));
     setScrollProgress(progress);
-
-    setCanScrollLeft(currentScroll > 10);
-    setCanScrollRight(currentScroll < maxScroll - 10);
   };
 
   useEffect(() => {
@@ -469,6 +462,7 @@ const CategorySlider: React.FC<CategorySliderProps> = ({
                   alt={lang === 'ar' ? work.titleAr : work.titleEn}
                   className="w-full h-auto object-cover object-top border-0 transition-transform duration-700 ease-out group-hover:scale-105"
                   loading="lazy"
+                  decoding="async"
                 />
 
                 {/* Subtle Hover Gradient & Fullscreen Hint */}
@@ -682,6 +676,7 @@ export const CreativeDesignSection: React.FC = () => {
                 src={selectedWork.image}
                 alt={lang === 'ar' ? selectedWork.titleAr : selectedWork.titleEn}
                 className="max-h-[72vh] w-auto max-w-full object-contain rounded-2xl shadow-2xl border-0"
+                decoding="async"
               />
             </div>
 

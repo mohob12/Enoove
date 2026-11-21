@@ -65,7 +65,10 @@ html[data-theme="light"] {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.15s ease;
+}
+
+button, a, input, select, textarea {
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.15s ease, transform 0.2s ease;
 }
 
 html {
@@ -80,10 +83,12 @@ body {
   min-height: 100vh;
   position: relative;
   line-height: 1.6;
+  text-rendering: optimizeSpeed;
 }
 
-body[dir="ltr"] {
-  font-family: var(--font-en);
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 /* Ambient Canvas Glows */
@@ -93,19 +98,24 @@ body[dir="ltr"] {
   pointer-events: none;
   z-index: 0;
   overflow: hidden;
+  transform: translate3d(0, 0, 0);
+  contain: strict;
 }
 
 .ambient-orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(120px);
+  filter: blur(80px);
   opacity: 0.22;
-  animation: floatOrb 20s infinite alternate ease-in-out;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  pointer-events: none;
+  animation: floatOrb 22s infinite alternate ease-in-out;
 }
 
 html.light .ambient-orb {
   opacity: 0.10;
-  filter: blur(140px);
+  filter: blur(90px);
 }
 
 .ambient-orb-1 {
@@ -153,9 +163,9 @@ html.light .ambient-grid {
 }
 
 @keyframes floatOrb {
-  0% { transform: translateY(0px) scale(1); }
-  50% { transform: translateY(40px) scale(1.08) translateX(20px); }
-  100% { transform: translateY(-30px) scale(0.95) translateX(-20px); }
+  0% { transform: translate3d(0px, 0px, 0) scale(1); }
+  50% { transform: translate3d(25px, 35px, 0) scale(1.06); }
+  100% { transform: translate3d(-20px, -25px, 0) scale(0.96); }
 }
 
 /* Glassmorphism Utilities */

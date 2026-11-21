@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { BotIcon, MessageSquareIcon, ZapIcon, SparklesIcon, CheckIcon } from './Icons';
+import { BotIcon, ZapIcon, SparklesIcon, CheckIcon } from './Icons';
 
 export const AiAutomationSection: React.FC = () => {
   const { t } = useLanguage();

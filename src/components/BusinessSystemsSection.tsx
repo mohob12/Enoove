@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { BarChartIcon, LayersIcon, ShieldCheckIcon, ArrowUpRightIcon } from './Icons';
+import { BarChartIcon, ArrowUpRightIcon } from './Icons';
 
 export const BusinessSystemsSection: React.FC = () => {
   const { t } = useLanguage();

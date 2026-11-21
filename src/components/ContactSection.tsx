@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { SendIcon, CheckIcon, MessageSquareIcon, SparklesIcon } from './Icons';
+import { SendIcon, SparklesIcon } from './Icons';
 
 export const ContactSection: React.FC = () => {
   const { t } = useLanguage();

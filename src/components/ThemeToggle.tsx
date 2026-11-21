@@ -3,7 +3,7 @@ import { useTheme } from '../context/ThemeContext';
 import { SunIcon, MoonIcon } from './Icons';
 
 export const ThemeToggle: React.FC<{ className?: string }> = ({ className = '' }) => {
-  const { theme, toggleTheme, isDark } = useTheme();
+  const { toggleTheme, isDark } = useTheme();
 
   return (
     <button

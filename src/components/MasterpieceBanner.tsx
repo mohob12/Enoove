@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { SparklesIcon, ArrowUpRightIcon, ExpandIcon } from './Icons';
+import { ArrowUpRightIcon, ExpandIcon } from './Icons';
 
 interface ShowcaseItem {
   id: string;
@@ -19,7 +19,7 @@ interface ShowcaseItem {
 const showcaseImages: ShowcaseItem[] = [
   {
     id: 'sb-1',
-    image: '/showcase_4k/02_maison_savour_4k.jpg',
+    image: '/showcase_web/02_maison_savour.jpg',
     titleAr: 'Maison Savour — واجهة مطعم فاخر 4K',
     titleEn: 'Maison Savour — 4K Gastronomy Web',
     serviceAr: 'تطوير المواقع',
@@ -58,7 +58,7 @@ const showcaseImages: ShowcaseItem[] = [
   },
   {
     id: 'sb-4',
-    image: '/showcase_4k/06_royal_crest_luxury_hotel_4k.jpg',
+    image: '/showcase_web/06_royal_crest_luxury_hotel.jpg',
     titleAr: 'Royal Crest — منتجع 5 نجوم ملكي',
     titleEn: 'Royal Crest — 5-Star Hotel 4K',
     serviceAr: 'منظومة الحجوزات',
@@ -204,6 +204,7 @@ export const MasterpieceBanner: React.FC = () => {
                         alt={lang === 'ar' ? item.titleAr : item.titleEn}
                         className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-110"
                         loading="lazy"
+                        decoding="async"
                       />
 
                       {/* Top floating glass badge */}

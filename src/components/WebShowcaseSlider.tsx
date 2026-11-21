@@ -6,6 +6,7 @@ import { ArrowLeftIcon, ArrowRightIcon, ExpandIcon, HeartIcon } from './Icons';
 interface ShowcaseProject {
   id: string;
   image: string;
+  imageFull?: string;
   url: string;
   titleAr: string;
   titleEn: string;
@@ -22,14 +23,15 @@ interface ShowcaseProject {
 const showcaseProjects: ShowcaseProject[] = [
   {
     id: 'maison-savour',
-    image: '/showcase_4k/02_maison_savour_4k.jpg',
+    image: '/showcase_web/02_maison_savour.jpg',
+    imageFull: '/showcase_4k/02_maison_savour_4k.jpg',
     url: 'maisonsavour.gourmet',
     titleAr: 'Maison Savour — مطعم فاخر وتجربة ضيافة ملكية',
     titleEn: 'Maison Savour — Fine Dining & Gastronomy Experience',
     categoryAr: 'المطاعم والكافيهات الفاخرة',
     categoryEn: 'Luxury Dining & Gastronomy',
-    descAr: 'تصميم داكن أنيق يبرز الأطباق بجودة سينمائية 4K مع نظام حجز طاولات تفاعلي.',
-    descEn: 'Cinematic dark 4K UI showcasing Michelin-standard dishes with an intelligent table reservation engine.',
+    descAr: 'تصميم داكن أنيق يبرز الأطباق بجودة سينمائية مع نظام حجز طاولات تفاعلي.',
+    descEn: 'Cinematic dark UI showcasing Michelin-standard dishes with an intelligent table reservation engine.',
     tags: ['Next.js 15', '4K Visuals', 'Table Booking API', 'Apple Pay'],
     metricsAr: '+210% زيادة الحجوزات المباشرة',
     metricsEn: '+210% Direct Bookings Growth',
@@ -37,7 +39,8 @@ const showcaseProjects: ShowcaseProject[] = [
   },
   {
     id: 'royal-crest',
-    image: '/showcase_4k/06_royal_crest_luxury_hotel_4k.jpg',
+    image: '/showcase_web/06_royal_crest_luxury_hotel.jpg',
+    imageFull: '/showcase_4k/06_royal_crest_luxury_hotel_4k.jpg',
     url: 'royalcrest.resort',
     titleAr: 'Royal Crest — فندق ومنتجع 5 نجوم ملكي',
     titleEn: 'Royal Crest — 5-Star Hotel & Presidential Suites',
@@ -52,7 +55,8 @@ const showcaseProjects: ShowcaseProject[] = [
   },
   {
     id: 'lumiere-clinic',
-    image: '/showcase_4k/08_lumiere_dermatology_clinic_4k.jpg',
+    image: '/showcase_web/08_lumiere_dermatology_clinic.jpg',
+    imageFull: '/showcase_4k/08_lumiere_dermatology_clinic_4k.jpg',
     url: 'lumierederm.clinic',
     titleAr: 'Lumière — مركز الجلدية والتجميل الطبي المتقدم',
     titleEn: 'Lumière — Aesthetic Dermatology & Laser Clinic',
@@ -67,7 +71,8 @@ const showcaseProjects: ShowcaseProject[] = [
   },
   {
     id: 'ahead-travel',
-    image: '/showcase_4k/14_ahead_travel_experiences_4k.jpg',
+    image: '/showcase_web/14_ahead_travel_experiences.jpg',
+    imageFull: '/showcase_4k/14_ahead_travel_experiences_4k.jpg',
     url: 'aheadjourneys.world',
     titleAr: 'AHEAD — وكالة رحلات واستكشافات فاخرة',
     titleEn: 'AHEAD — Curated Luxury Travel & Expeditions',
@@ -82,7 +87,8 @@ const showcaseProjects: ShowcaseProject[] = [
   },
   {
     id: 'livora-interiors',
-    image: '/showcase_4k/04_livora_interiors_4k.jpg',
+    image: '/showcase_web/04_livora_interiors.jpg',
+    imageFull: '/showcase_4k/04_livora_interiors_4k.jpg',
     url: 'livorainteriors.design',
     titleAr: 'Livora Interiors — أثاث راقي وتصميم داخلي معماري',
     titleEn: 'Livora Interiors — Haute Architecture & Furniture',
@@ -97,7 +103,8 @@ const showcaseProjects: ShowcaseProject[] = [
   },
   {
     id: 'cake-experience',
-    image: '/showcase_4k/03_cake_experience_4k.jpg',
+    image: '/showcase_web/03_cake_experience.jpg',
+    imageFull: '/showcase_4k/03_cake_experience_4k.jpg',
     url: 'cake.atelier',
     titleAr: 'CAKÉ — متجر حلويات وكيك فاخر حسب الطلب',
     titleEn: 'CAKÉ — Haute Confectionery & Gourmet E-Commerce',
@@ -112,7 +119,8 @@ const showcaseProjects: ShowcaseProject[] = [
   },
   {
     id: 'solara-dining',
-    image: '/showcase_4k/09_solara_fine_dining_4k.jpg',
+    image: '/showcase_web/09_solara_fine_dining.jpg',
+    imageFull: '/showcase_4k/09_solara_fine_dining_4k.jpg',
     url: 'solaradining.lounge',
     titleAr: 'Solara — لاونج ومطعم إطلالات بانورامية فاخر',
     titleEn: 'Solara — Fine Dining & Panoramic Rooftop Lounge',
@@ -127,7 +135,8 @@ const showcaseProjects: ShowcaseProject[] = [
   },
   {
     id: 'travel-world',
-    image: '/showcase_4k/01_travel_around_the_world_4k.jpg',
+    image: '/showcase_web/01_travel_around_the_world.jpg',
+    imageFull: '/showcase_4k/01_travel_around_the_world_4k.jpg',
     url: 'travelworld.voyage',
     titleAr: 'Travel Around The World — بوابة حجز طيران وفنادق',
     titleEn: 'Travel Around The World — Global Booking Portal',
@@ -142,7 +151,8 @@ const showcaseProjects: ShowcaseProject[] = [
   },
   {
     id: 'sugar-bliss',
-    image: '/showcase_4k/11_sugar_bliss_bakery_4k.jpg',
+    image: '/showcase_web/11_sugar_bliss_bakery.jpg',
+    imageFull: '/showcase_4k/11_sugar_bliss_bakery_4k.jpg',
     url: 'sugarbliss.sweets',
     titleAr: 'Sugar Bliss — معمل ومخبز الحلويات الحرفية',
     titleEn: 'Sugar Bliss — Artisan Bakery & Sweet Atelier',
@@ -157,7 +167,8 @@ const showcaseProjects: ShowcaseProject[] = [
   },
   {
     id: 'flavoria-steak',
-    image: '/showcase_4k/13_flavoria_fine_dining_4k.jpg',
+    image: '/showcase_web/13_flavoria_fine_dining.jpg',
+    imageFull: '/showcase_4k/13_flavoria_fine_dining_4k.jpg',
     url: 'flavoria.cuisine',
     titleAr: 'Flavoria — ستيك هاوس وتجربة طهي حية',
     titleEn: 'Flavoria — Prime Steakhouse & Live Grill Atelier',
@@ -172,7 +183,8 @@ const showcaseProjects: ShowcaseProject[] = [
   },
   {
     id: 'boulangerie-pastry',
-    image: '/showcase_4k/07_boulangerie_pastry_4k.jpg',
+    image: '/showcase_web/07_boulangerie_pastry.jpg',
+    imageFull: '/showcase_4k/07_boulangerie_pastry_4k.jpg',
     url: 'boulangerie.paris',
     titleAr: 'Boulangerie — مخبز فرنسي راقي ومعجنات باريسية',
     titleEn: 'Boulangerie — Parisian Artisan Pastry & Café',
@@ -187,7 +199,8 @@ const showcaseProjects: ShowcaseProject[] = [
   },
   {
     id: 'green-gourmet',
-    image: '/showcase_4k/12_green_gourmet_cuisine_4k.jpg',
+    image: '/showcase_web/12_green_gourmet_cuisine.jpg',
+    imageFull: '/showcase_4k/12_green_gourmet_cuisine_4k.jpg',
     url: 'greengourmet.bio',
     titleAr: 'Green Gourmet — مأكولات عضوية وصحية فاخرة',
     titleEn: 'Green Gourmet — Farm-to-Table Organic Dining',
@@ -202,7 +215,8 @@ const showcaseProjects: ShowcaseProject[] = [
   },
   {
     id: 'ticket-plan',
-    image: '/showcase_4k/10_ticket_plan_travel_4k.jpg',
+    image: '/showcase_web/10_ticket_plan_travel.jpg',
+    imageFull: '/showcase_4k/10_ticket_plan_travel_4k.jpg',
     url: 'ticketplan.tours',
     titleAr: 'Ticket Plan — منصة الوجهات السياحية والرحلات',
     titleEn: 'Ticket Plan — Curated Tours & Global Destinations',
@@ -217,7 +231,8 @@ const showcaseProjects: ShowcaseProject[] = [
   },
   {
     id: 'tlus-dining',
-    image: '/showcase_4k/15_tlus_taste_of_perfection_4k.jpg',
+    image: '/showcase_web/15_tlus_taste_of_perfection.jpg',
+    imageFull: '/showcase_4k/15_tlus_taste_of_perfection_4k.jpg',
     url: 'tlusperfection.dining',
     titleAr: 'TLUS — فنون التذوق والطهي العصري',
     titleEn: 'TLUS — Modern Gastronomy & Executive Dining',
@@ -352,12 +367,13 @@ export const WebShowcaseSlider: React.FC = () => {
                   zIndex,
                 }}
               >
-                {/* 1. Full-Bleed 4K Image: Natural proportion display */}
+                {/* 1. Fast, Web-Optimized Image with High-Fidelity Retina Display */}
                 <img
                   src={item.image}
                   alt={item.titleAr}
                   className="absolute inset-0 w-full h-full object-cover object-top showcase-img"
-                  loading="eager"
+                  loading={isCenter || absOffset <= 1 ? 'eager' : 'lazy'}
+                  decoding="async"
                 />
 
                 {/* Subtle top shade for top action buttons */}
@@ -383,7 +399,7 @@ export const WebShowcaseSlider: React.FC = () => {
                     <button
                       onClick={(e) => {
                         e.stopPropagation();
-                        setModalImage(item.image);
+                        setModalImage(item.imageFull || item.image);
                       }}
                       className="p-2 rounded-full bg-black/50 hover:bg-black/70 backdrop-blur-md border border-white/25 text-white transition-colors cursor-pointer"
                       title="معاينة الواجهة كاملة بدقة 4K"

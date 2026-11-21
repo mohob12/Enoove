@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { ArrowUpRightIcon, SparklesIcon } from './Icons';
 
@@ -21,11 +21,11 @@ const portfolioData: PortfolioItem[] = [
     category: 'web',
     titleAr: 'Maison Savour — مطعم فاخر وتجربة ضيافة ملكية',
     titleEn: 'Maison Savour — Luxury Gastronomy & Dining',
-    descAr: 'تصميم داكن أنيق يبرز الأطباق بجودة سينمائية 4K مع نظام حجز طاولات تفاعلي.',
-    descEn: 'Cinematic dark 4K UI showcasing culinary art with interactive table bookings.',
+    descAr: 'تصميم داكن أنيق يبرز الأطباق بجودة سينمائية مع نظام حجز طاولات تفاعلي.',
+    descEn: 'Cinematic dark UI showcasing culinary art with interactive table bookings.',
     tag: 'Hospitality & Web',
     metrics: '+210% نمو الحجوزات',
-    image: '/showcase_4k/02_maison_savour_4k.jpg',
+    image: '/showcase_web/02_maison_savour.jpg',
     accent: '#F97316'
   },
   {
@@ -37,7 +37,7 @@ const portfolioData: PortfolioItem[] = [
     descEn: 'Pristine medical clinic interface with 30s appointment scheduling.',
     tag: 'Healthcare Web',
     metrics: '99.8% التزام بالمواعيد',
-    image: '/showcase_4k/08_lumiere_dermatology_clinic_4k.jpg',
+    image: '/showcase_web/08_lumiere_dermatology_clinic.jpg',
     accent: '#38BDF8'
   },
   {
@@ -49,7 +49,7 @@ const portfolioData: PortfolioItem[] = [
     descEn: 'Immersive travel interface presenting global destinations and custom tours.',
     tag: 'Travel & Tourism',
     metrics: '+320% نمو المبيعات',
-    image: '/showcase_4k/14_ahead_travel_experiences_4k.jpg',
+    image: '/showcase_web/14_ahead_travel_experiences.jpg',
     accent: '#FB923C'
   },
   {
@@ -61,7 +61,7 @@ const portfolioData: PortfolioItem[] = [
     descEn: 'Architectural furniture catalog with customized purchasing workflow.',
     tag: 'Architecture & E-Com',
     metrics: 'مبيعات +1.8M$ في أول ربع',
-    image: '/showcase_4k/04_livora_interiors_4k.jpg',
+    image: '/showcase_web/04_livora_interiors.jpg',
     accent: '#A3E635'
   },
   {
@@ -73,7 +73,7 @@ const portfolioData: PortfolioItem[] = [
     descEn: 'Regal obsidian and gold aesthetic showcasing presidential suites and direct booking.',
     tag: 'Resort & Booking',
     metrics: '98% نسبة إشغال الغرف',
-    image: '/showcase_4k/06_royal_crest_luxury_hotel_4k.jpg',
+    image: '/showcase_web/06_royal_crest_luxury_hotel.jpg',
     accent: '#EAB308'
   },
   {
@@ -85,18 +85,14 @@ const portfolioData: PortfolioItem[] = [
     descEn: '360° custom cake builder with effortless instant mobile checkout.',
     tag: 'Luxury E-Commerce',
     metrics: '+180% تحويل السلة',
-    image: '/showcase_4k/03_cake_experience_4k.jpg',
+    image: '/showcase_web/03_cake_experience.jpg',
     accent: '#EC4899'
   }
 ];
 
 export const PortfolioSection: React.FC = () => {
   const { t, lang } = useLanguage();
-  const [activeFilter, setActiveFilter] = useState<'all' | 'web' | 'ai' | 'systems' | 'branding'>('all');
-
-  const filteredItems = activeFilter === 'all'
-    ? portfolioData
-    : portfolioData.filter((item) => item.category === activeFilter);
+  const filteredItems = portfolioData;
 
   return (
     <section id="portfolio" className="py-24 relative overflow-hidden bg-gradient-to-b from-[#080B14] via-[#0b1220] to-[#080B14]">
@@ -130,6 +126,7 @@ export const PortfolioSection: React.FC = () => {
                     alt={item.titleAr}
                     className="w-full h-full object-cover object-top"
                     loading="lazy"
+                    decoding="async"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
 
