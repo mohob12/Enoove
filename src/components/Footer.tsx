@@ -2,7 +2,7 @@ import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { Logo } from './Icons';
 
-export const Footer: React.FC = () => {
+export const Footer: React.FC<{ onOpenAdmin?: () => void }> = ({ onOpenAdmin }) => {
   const { t } = useLanguage();
 
   return (
@@ -88,9 +88,18 @@ export const Footer: React.FC = () => {
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-[#A5B0C2] gap-4">
           <div>{t('footer.rights')}</div>
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center gap-4 sm:gap-6">
             <a href="#" className="hover:text-white transition-colors">{t('footer.privacy')}</a>
             <a href="#" className="hover:text-white transition-colors">{t('footer.terms')}</a>
+            <button
+              type="button"
+              onClick={onOpenAdmin}
+              className="text-white/40 hover:text-[#40D9E8] transition-colors flex items-center gap-1.5 cursor-pointer text-xs"
+              title="لوحة تحكم الموقع وقاعدة البيانات (رمز المرور: enoove2026)"
+            >
+              <span>⚡</span>
+              <span>لوحة التحكم CMS</span>
+            </button>
             <a href="#top" className="text-[#40D9E8] hover:underline">العودة للأعلى ↑</a>
           </div>
         </div>

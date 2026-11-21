@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { SendIcon, SparklesIcon } from './Icons';
+import { submitInquiry } from '../lib/supabase';
 
 export const ContactSection: React.FC = () => {
   const { t } = useLanguage();
+  const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [feedbackMessage, setFeedbackMessage] = useState('');
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -14,11 +17,23 @@ export const ContactSection: React.FC = () => {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
+    if (submitting) return;
+
+    setSubmitting(true);
+    try {
+      const res = await submitInquiry({
+        name: form.name,
+        email: form.email,
+        phone: form.phone,
+        service: form.service,
+        budget: form.budget,
+        message: form.message,
+      });
+
+      setSubmitted(true);
+      setFeedbackMessage(res.message || '');
       setForm({
         name: '',
         email: '',
@@ -27,7 +42,14 @@ export const ContactSection: React.FC = () => {
         budget: '$3k - $8k',
         message: ''
       });
-    }, 5000);
+    } catch {
+      setSubmitted(true);
+    } finally {
+      setSubmitting(false);
+      setTimeout(() => {
+        setSubmitted(false);
+      }, 7000);
+    }
   };
 
   return (
@@ -108,7 +130,7 @@ export const ContactSection: React.FC = () => {
                 </div>
                 <h3 className="text-2xl font-bold text-white">تم استلام طلبك بنجاح!</h3>
                 <p className="text-sm text-[#A5B0C2] max-w-md mx-auto">
-                  {t('contact.success')}
+                  {feedbackMessage || t('contact.success')}
                 </p>
               </div>
             ) : (
@@ -190,10 +212,17 @@ export const ContactSection: React.FC = () => {
 
                 <button
                   type="submit"
-                  className="w-full py-4 rounded-full bg-gradient-to-r from-[#647BFF] via-[#40D9E8] to-[#647BFF] text-white font-bold text-sm sm:text-base flex items-center justify-center gap-2 hover:shadow-[0_0_30px_rgba(64,217,232,0.5)] transition-all transform hover:-translate-y-0.5 cursor-pointer"
+                  disabled={submitting}
+                  className={`w-full py-4 rounded-full bg-gradient-to-r from-[#647BFF] via-[#40D9E8] to-[#647BFF] text-white font-bold text-sm sm:text-base flex items-center justify-center gap-2 hover:shadow-[0_0_30px_rgba(64,217,232,0.5)] transition-all transform hover:-translate-y-0.5 cursor-pointer ${
+                    submitting ? 'opacity-60 cursor-not-allowed' : ''
+                  }`}
                 >
-                  <SendIcon size={18} />
-                  <span>{t('contact.submit')}</span>
+                  {submitting ? (
+                    <span className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                  ) : (
+                    <SendIcon size={18} />
+                  )}
+                  <span>{submitting ? 'جاري الإرسال والحفظ في قاعدة البيانات...' : t('contact.submit')}</span>
                 </button>
               </form>
             )}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { LanguageProvider } from './context/LanguageContext';
 import { ThemeProvider } from './context/ThemeContext';
 import { Navbar } from './components/Navbar';
@@ -15,8 +15,22 @@ import { PortfolioSection } from './components/PortfolioSection';
 import { CtaSection } from './components/CtaSection';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
+import { AdminDashboard } from './components/AdminDashboard';
 
 export const AppContent: React.FC = () => {
+  const [isAdminOpen, setIsAdminOpen] = useState(false);
+
+  useEffect(() => {
+    const checkHash = () => {
+      if (window.location.hash === '#admin') {
+        setIsAdminOpen(true);
+      }
+    };
+    checkHash();
+    window.addEventListener('hashchange', checkHash);
+    return () => window.removeEventListener('hashchange', checkHash);
+  }, []);
+
   return (
     <div className="relative min-h-screen transition-colors duration-500 overflow-x-hidden">
       {/* Background Ambient Grid & Glow Canvas */}
@@ -47,7 +61,18 @@ export const AppContent: React.FC = () => {
       </main>
 
       {/* Footer */}
-      <Footer />
+      <Footer onOpenAdmin={() => setIsAdminOpen(true)} />
+
+      {/* Admin Dashboard CMS Modal */}
+      <AdminDashboard 
+        isOpen={isAdminOpen} 
+        onClose={() => {
+          setIsAdminOpen(false);
+          if (window.location.hash === '#admin') {
+            window.history.replaceState(null, '', ' ');
+          }
+        }} 
+      />
     </div>
   );
 };

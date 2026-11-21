@@ -1,0 +1,20 @@
+# Security and Performance Headers for Cloudflare Pages
+
+/*
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+# Aggressive Caching for static assets
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/showcase_web/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/banners/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+
+/identity/*
+  Cache-Control: public, max-age=31536000, immutable
